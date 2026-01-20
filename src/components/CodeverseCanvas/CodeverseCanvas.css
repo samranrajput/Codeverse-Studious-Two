@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
+.themed-codeverse-canvas {
+  transition: all 0.3s ease;
+}
+
+html[data-bs-theme="dark"] {
+  --canvas-accent-color: #00a384;
+}
+
+html[data-bs-theme="light"] {
+  --canvas-accent-color: #060121;
+}
+
+.codeverse-canvas {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.codeverse-canvas .render-canvas {
+  width: 40vw;
+  height: 40vw;
+  touch-action: none;
+  outline: none;
+  animation: codeverse-canvas 5s forwards;
+}
+
+@keyframes codeverse-canvas {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+html[data-bs-theme="light"] .codeverse-canvas .render-canvas {
+  animation: codeverse-canvas-light-mode 0.1s forwards;
+}
+
+@keyframes codeverse-canvas-light-mode {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+.codeverse-canvas .codeverse-canvas-heading {
+  font-family: "Caveat", cursive;
+  letter-spacing: 5px;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #00a384;
+  animation: codeverse-canvas-heading 10s forwards;
+}
+
+@keyframes codeverse-canvas-heading {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+  .codeverse-canvas .render-canvas {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .codeverse-canvas .render-canvas {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .codeverse-canvas .codeverse-canvas-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+  .codeverse-canvas .codeverse-canvas-heading {
+    font-size: 2rem;
+  }
+}

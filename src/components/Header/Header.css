@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
+header {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  height: 100vh;
+  border: 0.6em groove #00a384;
+}
+
+header .shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background: rgba(0, 163, 133, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+  opacity: 0;
+  animation: header-shape 3s 4s forwards;
+}
+
+@keyframes header-shape {
+  from {
+    opacity: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 50%, 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 20% 50%, 0 0);
+  }
+}
+
+header .skill-container {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(150%, -50%);
+  z-index: -1;
+  width: 30vw;
+  height: 30vw;
+  animation: skill-container-aos 3s 4s forwards;
+}
+
+@keyframes skill-container-aos {
+  from {
+    transform: translate(150%, -50%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+header .skill-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  mask: conic-gradient(
+    transparent 0deg 15deg,
+    #fff 15deg 80deg,
+    transparent 80deg 105deg,
+    #fff 105deg 170deg,
+    transparent 170deg 190deg,
+    #fff 190deg 260deg,
+    transparent 260deg 285deg,
+    #fff 285deg 350deg,
+    transparent 350deg 360deg
+  );
+  -webkit-mask: conic-gradient(
+    transparent 0deg 15deg,
+    #fff 15deg 80deg,
+    transparent 80deg 105deg,
+    #fff 105deg 170deg,
+    transparent 170deg 190deg,
+    #fff 190deg 260deg,
+    transparent 260deg 285deg,
+    #fff 285deg 350deg,
+    transparent 350deg 360deg
+  );
+  animation: ring 20s 5s infinite;
+}
+
+html[data-bs-theme="light"] header .skill-container::before {
+  border: 5px solid #060121;
+}
+
+@keyframes ring {
+  25% {
+    transform: rotate(-90deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  75% {
+    transform: rotate(-270deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+header .skill-container .ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: ring-text 20s 5s infinite;
+}
+
+@keyframes ring-text {
+  25% {
+    transform: rotate(-90deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  75% {
+    transform: rotate(-270deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+header .skill-container .ring .skill {
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  padding: 0.5em;
+  text-align: center;
+  width: max-content;
+  background: transparent;
+}
+
+header .skill-container .ring .skill i {
+  font-size: 2rem;
+}
+
+header .skill-container .ring .skill1 {
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+header .skill-container .ring .skill2 {
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+header .skill-container .ring .skill3 {
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+header .skill-container .ring .skill4 {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+header .container {
+  display: flex;
+}
+
+header .container .header-contant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1em;
+  width: 60%;
+  height: 100vh;
+  transform: translateX(-75%);
+  animation: header-contant-aos 3s 4s forwards;
+}
+
+@keyframes header-contant-aos {
+  from {
+    transform: translateX(-75%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+header .container .header-contant h1 {
+  color: #00a384;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 200;
+}
+
+html[data-bs-theme="light"] {
+  --themed-text-color: #060121;
+}
+
+html[data-bs-theme="dark"] {
+  --themed-text-color: #fff;
+}
+
+header .container .header-contant .contant {
+  font-weight: bold;
+  width: 60%;
+}
+
+header .header-contant .btn-container {
+  display: flex;
+  column-gap: 1em;
+  margin-top: 1em;
+}
+
+header .container .header-design {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 100vh;
+  z-index: 2;
+  transform: translateX(100%);
+  animation: header-design-aos 3s 4s forwards;
+}
+
+@keyframes header-design-aos {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+header .container .header-design svg .st0,
+header .container .header-design svg .st1,
+header .container .header-design svg .st2 {
+  fill: none;
+  stroke: #060121;
+  stroke-width: 42;
+  stroke-miterlimit: 10;
+}
+
+header .container .header-design svg .st0 {
+  stroke-dasharray: 12.1947, 12.1947, 12.1947, 12.1947, 12.1947, 12.1947;
+}
+
+header .container .header-design svg .st1 {
+  stroke-linecap: square;
+  stroke-dasharray: 140;
+}
+
+header .container .header-design svg .st2 {
+  stroke-width: 16;
+  stroke-linecap: square;
+}
+
+header .container .header-design figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 22vw;
+  height: 22vw;
+  transform: translate(-50%, -50%);
+}
+
+header .container .header-design figure img {
+  border-radius: 250px;
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+  header .shape {
+    width: 100%;
+    height: 15%;
+    top: 85.2%;
+  }
+
+  @keyframes header-shape {
+    from {
+      opacity: 0;
+      clip-path: polygon(0 0, 30% 0, 50% 40%, 70% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    to {
+      opacity: 1;
+      clip-path: polygon(0 0, 0 0, 50% 100%, 100% 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  header .skill-container {
+    top: 100%;
+    left: 50%;
+    width: 70vw;
+    height: 70vw;
+    transform: transform(-50, 0%);
+    animation: skill-container-aos 3s 4s forwards;
+  }
+
+  @keyframes skill-container-aos {
+    from {
+      transform: translate(-50%, 0%);
+    }
+    to {
+      transform: translate(-50%, -22%);
+    }
+  }
+
+  header .skill-container::before {
+    border: 5px solid #00a384;
+    mask: conic-gradient(
+      transparent 0deg 12deg,
+      #00a384 12deg 70deg,
+      transparent 70deg 110deg,
+      #00a384 110deg 160deg,
+      transparent 160deg 200deg,
+      #00a384 200deg 254deg,
+      transparent 254deg 285deg,
+      #00a384 285deg 346deg,
+      transparent 346deg 360deg
+    );
+    -webkit-mask: conic-gradient(
+      transparent 0deg 12deg,
+      #00a384 12deg 70deg,
+      transparent 70deg 110deg,
+      #00a384 110deg 160deg,
+      transparent 160deg 200deg,
+      #00a384 200deg 254deg,
+      transparent 254deg 285deg,
+      #00a384 285deg 346deg,
+      transparent 346deg 360deg
+    );
+  }
+
+  html[data-bs-theme="light"] header .skill-container::before {
+    border: 5px solid #00a384;
+  }
+
+  header .skill-container .ring .skill i,
+  header .skill-container .ring .skill p {
+    color: #00a384;
+  }
+
+  header .skill-container .ring .skill1 {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+
+  header .skill-container .ring .skill2 {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  header .skill-container .ring .skill3 {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  header .skill-container .ring .skill4 {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  header .container {
+    flex-direction: column-reverse;
+  }
+
+  header .container .header-contant {
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    transform: scale(0);
+  }
+
+  @keyframes header-contant-aos {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  header .container .header-contant .contant {
+    text-align: center;
+    width: 100%;
+  }
+
+  header .container .header-design {
+    width: 100%;
+    height: 50vh;
+    transform: scale(0);
+  }
+
+  @keyframes header-design-aos {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  header .container .header-design svg .st0,
+  header .container .header-design svg .st1,
+  header .container .header-design svg .st2 {
+    stroke: #00a384;
+  }
+
+  header .container .header-design figure {
+    height: 48vw;
+    height: 48vw;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  header .shape {
+    height: 10%;
+    top: 90.2%;
+  }
+
+  header .skill-container {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  @keyframes aos-translate {
+    from {
+      transform: translate(-50%, 0%);
+    }
+    to {
+      transform: translate(-50%, -22%);
+    }
+  }
+
+  header .skill-container .ring .skill {
+    font-size: 1rem;
+  }
+
+  header .skill-container .ring .skill i {
+    font-size: 1.8rem;
+  }
+
+  header .container .header-contant {
+    height: 60vh;
+  }
+
+  header .container .header-contant h1 {
+    text-align: center;
+  }
+
+  header .container .header-design {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+  header .container .header-design figure {
+    height: 42vw;
+    height: 42vw;
+  }
+}

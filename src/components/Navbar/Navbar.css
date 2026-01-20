@@ -1,0 +1,142 @@
+nav {
+  position: fixed;
+  top: 0.8em;
+  margin: 0 auto;
+  max-width: 94%;
+  width: 92%;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 163, 132, 0.6);
+  transform: translateY(-130%);
+  animation: nav-aos 3s 4s forwards;
+}
+
+@keyframes nav-aos {
+  from {
+    transform: translateY(-130%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+nav .navbar-logo {
+  width: 12%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 1s ease;
+  padding: 0.4em 1em;
+}
+
+nav ul li.active {
+  background: #00a384;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav .burger-menu {
+  display: none;
+}
+
+nav ul .sidebar-logo {
+  display: none;
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+  nav .navbar-logo {
+    width: 20%;
+  }
+
+  .theme-toggle-burger-menu-side {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .theme-toggle-burger-menu-side.active-style {
+    position: absolute;
+    top: 5%;
+    right: -3%;
+  }
+
+  nav .burger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  nav ul .sidebar-logo {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: -31%;
+    right: -100%;
+    border: 2px solid white;
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    transition: right 0.4s ease-in-out;
+  }
+
+  nav ul.active {
+    right: -4.8%;
+  }
+
+  html[data-bs-theme="light"] nav ul {
+    background: #dcdcdc;
+  }
+
+  html[data-bs-theme="dark"] nav ul {
+    background: #060121;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  nav .navbar-logo {
+    width: 35%;
+  }
+
+  nav ul {
+    top: -31%;
+  }
+
+  nav ul.active {
+    right: -4.8%;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  nav .navbar-logo {
+    width: 15%;
+  }
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+  nav .navbar-logo {
+    width: 35%;
+  }
+}
