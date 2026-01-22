@@ -5,11 +5,19 @@ import "aos/dist/aos.css";
 import "./index.css";
 import CodeverseCanvas from "./components/CodeverseCanvas/CodeverseCanvas";
 import Header from "./components/Header/Header";
+import About from "./components/About/About";
 
 AOS.init({
   duration: 3000,
   once: true,
+  offset: 100,
 });
+
+if (typeof window !== "undefined") {
+  window.addEventListener("load", () => {
+    AOS.refresh();
+  });
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -31,6 +39,8 @@ createRoot(document.getElementById("root")!).render(
     <Header />
     <section id="skills"></section>
 
-    <main></main>
+    <main>
+      <About />
+    </main>
   </StrictMode>,
 );

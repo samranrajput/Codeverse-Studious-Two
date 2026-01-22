@@ -13,13 +13,13 @@ nav {
   border-radius: 50px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(0, 163, 132, 0.6);
-  transform: translateY(-60%);
+  transform: translateY(-120%);
   animation: nav-aos 3s 4s forwards;
 }
 
 @keyframes nav-aos {
   from {
-    transform: translateY(-60%);
+    transform: translateY(-120%);
   }
   to {
     transform: translateY(0%);

@@ -1,4 +1,8 @@
+/* Contant Font Style */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Heading Font Style */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 
 * {
   margin: 0;
@@ -7,10 +11,8 @@
 }
 
 html,
-body,
-#root {
+body {
   font-family: "Roboto", sans-serif;
-  height: 100vh;
 }
 
 .themed-text {
@@ -39,40 +41,6 @@ html[data-bs-theme="light"] {
   --border-color: #060121;
 }
 
-html[data-bs-theme="dark"] .text-light {
-  color: #fff;
-}
-
-html[data-bs-theme="dark"] .text-dark {
-  color: #060121;
-}
-
-html[data-bs-theme="light"] .text-light {
-  color: #fff;
-}
-
-html[data-bs-theme="light"] .text-dark {
-  color: #060121;
-}
-
-.text-light {
-  color: #fff;
-}
-
-.text-dark {
-  color: #060121;
-}
-
-.bg-light {
-  background-color: #fff;
-  color: #060121;
-}
-
-.bg-dark {
-  background-color: #060121;
-  color: #fff;
-}
-
 .container {
   height: 100%;
   max-width: 95%;
@@ -88,7 +56,22 @@ a {
   text-decoration: none;
 }
 
+.sections-heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sections-heading {
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.8em 0;
+  text-align: center;
+}
+
 .btn {
+  display: inline-block;
   font-weight: bold;
   padding: 0.8em 1.5em;
   border-radius: 50px;
@@ -123,7 +106,7 @@ a {
 @media (max-width: 600px) and (orientation: landscape) {
   html,
   body {
-    font-size: 70%;
+    font-size: 65%;
   }
 }
 

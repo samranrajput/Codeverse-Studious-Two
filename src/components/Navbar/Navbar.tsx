@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="themed-border" data-aos="fade-down" data-aos-delay="3000">
+    <nav className="themed-border">
       <figure className="navbar-logo">
         <img src={logo} alt="Codeverse Studious Navbar Logo" />
       </figure>

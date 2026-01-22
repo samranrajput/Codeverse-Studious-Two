@@ -184,13 +184,13 @@ header .container .header-contant {
   row-gap: 1em;
   width: 60%;
   height: 100vh;
-  transform: translateX(-75%);
+  transform: translateX(-90%);
   animation: header-contant-aos 3s 4s forwards;
 }
 
 @keyframes header-contant-aos {
   from {
-    transform: translateX(-75%);
+    transform: translateX(-90%);
   }
   to {
     transform: translateX(0%);

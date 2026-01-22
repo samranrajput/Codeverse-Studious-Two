@@ -131,7 +131,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   return (
     <motion.span
       className={`shiny-text ${className}`}
-      style={{ ...gradientStyle, backgroundPosition, display: "inline-block" }}
+      style={{ ...gradientStyle, backgroundPosition }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
