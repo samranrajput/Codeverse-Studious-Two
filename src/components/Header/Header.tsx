@@ -127,7 +127,12 @@ const Header: React.FC = memo(() => {
             <GlassIcons items={items} className="custom-class" />
           </div>
           <div className="btn-container">
-            <a href={myResume} target="_blank" rel="noreferrer">
+            <a
+              href={myResume}
+              target="_blank"
+              rel="noreferrer"
+              className="themed-text themed-border btn"
+            >
               <ShinyText
                 text="My Resume !"
                 speed={2}
@@ -138,13 +143,14 @@ const Header: React.FC = memo(() => {
                 yoyo
                 pauseOnHover
                 disabled={false}
-                className="btn themed-text themed-border"
               />
             </a>
+
             <a
               href="https://wa.me/923172960156"
               target="_blank"
               rel="noreferrer"
+              className="themed-text themed-border btn"
             >
               <ShinyText
                 text="Hire Me Now !"
@@ -156,7 +162,6 @@ const Header: React.FC = memo(() => {
                 yoyo
                 pauseOnHover
                 disabled={false}
-                className="btn themed-text themed-border"
               />
             </a>
           </div>

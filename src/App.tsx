@@ -1,35 +1,58 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+// Components
+import CodeverseCanvas from "./components/CodeverseCanvas/CodeverseCanvas";
+import Header from "./components/Header/Header";
+import About from "./components/About/About";
+import Highlights from "./components/Highlights/Highlights";
+
+const App = () => {
+  // AOS initialization inside useEffect (Best Practice)
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Thora fast (3000 kafi slow ho jata hai)
+      once: true,
+      offset: 100,
+      easing: "ease-in-out",
+    });
+
+    // Window load par refresh
+    const handleLoad = () => AOS.refresh();
+    window.addEventListener("load", handleLoad);
+
+    return () => window.removeEventListener("load", handleLoad);
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <CodeverseCanvas
+        ballSize={7.5}
+        logoSize={2.8}
+        particleCount={500}
+        ringCount={3}
+        ringGap={1}
+        rotationSpeed={{ x: 0.02, y: 0.03, z: 0.01 }}
+        tabletBallSize={6}
+        tabletLogoSize={2.5}
+        tabletParticleCount={1000}
+        mobileBallSize={7}
+        mobileLogoSize={3}
+        mobileParticleCount={500}
+        mobileRingGap={0.7}
+      />
+
+      <Header />
+
+      <main>
+        <About />
+
+        <Highlights />
+      </main>
     </>
   );
-}
+};
 
 export default App;

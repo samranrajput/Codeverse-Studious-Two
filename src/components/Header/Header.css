@@ -9,7 +9,7 @@ header {
   overflow: hidden;
   z-index: 2;
   height: 100vh;
-  border: 0.6em groove #00a384;
+  border: 0.8em ridge #00a384;
 }
 
 header .shape {
@@ -218,7 +218,7 @@ header .container .header-contant .contant {
 
 header .header-contant .btn-container {
   display: flex;
-  column-gap: 1em;
+  column-gap: 2em;
   margin-top: 1em;
 }
 
@@ -457,6 +457,11 @@ header .container .header-design figure img {
 
   header .container .header-design {
     height: 40vh;
+  }
+
+  header .container .header-design figure {
+    height: 52vw;
+    height: 52vw;
   }
 }
 

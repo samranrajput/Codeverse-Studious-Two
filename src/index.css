@@ -1,45 +1,4 @@
-/* Contant Font Style */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* Heading Font Style */
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-.themed-text {
-  color: var(--text-color);
-  transition: color 2s ease;
-}
-.themed-bg {
-  background-color: var(--bg-color);
-  transition: background-color 2s ease;
-}
-
-.themed-border {
-  border: 2px solid var(--border-color);
-  transition: background-color 2s ease;
-}
-
-html[data-bs-theme="dark"] {
-  --text-color: #fff;
-  --bg-color: #060121;
-  --border-color: #fff;
-}
-
-html[data-bs-theme="light"] {
-  --text-color: #060121;
-  --bg-color: #fff;
-  --border-color: #060121;
-}
 
 .container {
   height: 100%;
@@ -71,10 +30,10 @@ a {
 }
 
 .btn {
-  display: inline-block;
   font-weight: bold;
-  padding: 0.8em 1.5em;
-  border-radius: 50px;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  border-radius: 1em;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
