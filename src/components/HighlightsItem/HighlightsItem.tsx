@@ -32,7 +32,7 @@ const HighlightsItem: React.FC<HighlightsItemProps> = ({
       ref={itemRef}
       className={`${isMobile ? "mobile-highlights-item" : "desktop-highlights-item"} ${round ? "round" : ""}`}
     >
-      <i className="highlights-icon-container">{item.icon}</i>
+      <i>{item.icon}</i>
 
       <CountUp
         from={0}
@@ -40,13 +40,11 @@ const HighlightsItem: React.FC<HighlightsItemProps> = ({
         separator=","
         direction="up"
         duration={1}
-        className="count-up-text"
+        className="count-up themed-text"
         startWhen={true}
       />
 
-      <p className="highlights-item-title normal-heading themed-text">
-        {item.title}
-      </p>
+      <p className="themed-text">{item.title}</p>
     </div>
   );
 };

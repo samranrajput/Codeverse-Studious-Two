@@ -1,4 +1,4 @@
 #highlights .container {
-  /* border: 2px solid red; */
+  overflow: hidden;
   margin-bottom: 5em;
 }
