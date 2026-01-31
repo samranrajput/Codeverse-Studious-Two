@@ -8,18 +8,17 @@ import CodeverseCanvas from "./components/CodeverseCanvas/CodeverseCanvas";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import Highlights from "./components/Highlights/Highlights";
+import Services from "./components/Services/Services";
 
 const App = () => {
-  // AOS initialization inside useEffect (Best Practice)
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Thora fast (3000 kafi slow ho jata hai)
+      duration: 2000,
       once: true,
       offset: 100,
       easing: "ease-in-out",
     });
 
-    // Window load par refresh
     const handleLoad = () => AOS.refresh();
     window.addEventListener("load", handleLoad);
 
@@ -50,6 +49,8 @@ const App = () => {
         <About />
 
         <Highlights />
+
+        <Services />
       </main>
     </>
   );

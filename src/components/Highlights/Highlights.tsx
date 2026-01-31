@@ -4,7 +4,6 @@ import { IoIosEye } from "react-icons/io";
 import ShinyText from "../ShinyText/ShinyText";
 import Carousel from "../Carousel/Carousel";
 import HighlightsItem from "../HighlightsItem/HighlightsItem";
-import "./Highlights.css";
 
 const Highlights: React.FC = () => {
   const HIGHLIGHTS_ITEM = [
@@ -17,14 +16,14 @@ const Highlights: React.FC = () => {
     },
     {
       id: 2,
-      aos: "fade-down",
+      aos: "fade-up",
       icon: <FaProjectDiagram className="themed-text" />,
       title: "Projects",
       counter: 200,
     },
     {
       id: 3,
-      aos: "fade-down",
+      aos: "fade-up",
       icon: <FaHeart className="themed-text" />,
       title: "Likes",
       counter: 100,
@@ -39,7 +38,7 @@ const Highlights: React.FC = () => {
   ];
 
   return (
-    <section id="highlights">
+    <section id="highlights" style={{ overflow: "hidden" }}>
       <div className="sections-heading-container" data-aos="fade-down">
         <ShinyText
           text="Highlights"
