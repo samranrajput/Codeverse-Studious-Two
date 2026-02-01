@@ -4,9 +4,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 2em;
-  padding: 1em;
-  border: 0.5em ridge #00a384;
+  row-gap: 1em;
+  padding: 2em 1em;
+  border: 0.8em ridge #00a384;
   border-radius: 2em;
   background: linear-gradient(
     to left top,
@@ -24,12 +24,11 @@
 
 .desktop-services-item {
   width: 28vw;
-  height: 35vw;
 }
 
 .mobile-services-item {
   width: 85vw;
-  height: 100vw;
+  height: 100%;
   cursor: grab;
 }
 
@@ -42,9 +41,9 @@
   font-size: 4rem;
 }
 
-.desktop-services-item h1,
+.desktop-services-item h2,
 .desktop-services-item p,
-.mobile-services-item h1,
+.mobile-services-item h2,
 .mobile-services-item p {
   font-weight: bold;
   text-align: center;
@@ -57,23 +56,18 @@
 @media (max-width: 850px) and (orientation: portrait) {
   .desktop-services-item {
     width: 42vw;
-    height: 65vw;
-    row-gap: 1em;
-    padding: 0.3em;
   }
 }
 
 @media (max-width: 960px) and (orientation: landscape) {
   .desktop-services-item {
     width: 27vw;
-    height: 42vw;
-    row-gap: 1em;
   }
 }
 
-@media (max-width: 450px) and (orientation: portrait) {
+/* @media (max-width: 450px) and (orientation: portrait) {
   .mobile-services-item {
     height: 130vw;
     row-gap: 1em;
   }
-}
+} */

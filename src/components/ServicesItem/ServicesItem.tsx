@@ -33,7 +33,7 @@ const ServicesItem: React.FC<ServicesItemProps> = ({
     >
       <i>{item.icon}</i>
 
-      <h1 className="themed-text">{item.title}</h1>
+      <h2 className="themed-text">{item.title}</h2>
 
       <p className="themed-text">{item.description}</p>
     </div>

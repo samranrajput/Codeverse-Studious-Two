@@ -5,9 +5,8 @@
   justify-content: center;
   align-items: center;
   row-gap: 1em;
-  width: 20vw;
-  height: 20vw;
-  border: 0.5em ridge #00a384;
+  padding: 2em 0em;
+  border: 0.8em ridge #00a384;
   border-radius: 2em;
   background: linear-gradient(
     to left top,
@@ -25,12 +24,11 @@
 
 .desktop-highlights-item {
   width: 20vw;
-  height: 20vw;
 }
 
 .mobile-highlights-item {
   width: 85vw;
-  height: 85vw;
+  padding: 3em 0em;
   cursor: grab;
 }
 
@@ -74,6 +72,5 @@
 @media (max-width: 850px) and (orientation: portrait) {
   .desktop-highlights-item {
     width: 40vw;
-    height: 40vw;
   }
 }

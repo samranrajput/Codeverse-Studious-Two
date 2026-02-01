@@ -9,11 +9,12 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import Highlights from "./components/Highlights/Highlights";
 import Services from "./components/Services/Services";
+import Skills from "./components/Skills/Skills";
 
 const App = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
       once: true,
       offset: 100,
       easing: "ease-in-out",
@@ -51,6 +52,8 @@ const App = () => {
         <Highlights />
 
         <Services />
+
+        <Skills />
       </main>
     </>
   );
