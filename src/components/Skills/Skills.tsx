@@ -12,12 +12,12 @@ import {
 import {
   RiTailwindCssFill,
   RiJavascriptFill,
-  RiNodejsLine,
+  RiNextjsFill,
 } from "react-icons/ri";
-import { FaDartLang, FaFlutter } from "react-icons/fa6";
 import { BiLogoDjango } from "react-icons/bi";
-import { SiReact, SiPhp } from "react-icons/si";
-import PythonIcon from "../../assets/images/py_color.png";
+import { SiReact, SiPhp, SiTypescript } from "react-icons/si";
+import PythonIcon from "../../assets/images/py_icon.png";
+import JavaIcon from "../../assets/images/java_icon.png";
 import ShinyText from "../ShinyText/ShinyText";
 import LogoLoop from "../LogoLoop/LogoLoop";
 
@@ -26,17 +26,17 @@ const Skills: React.FC = () => {
     {
       node: <FaHtml5 style={{ color: "#E34F26" }} />,
       title: "HTML",
-      href: "https://www.w3schools.com/html/",
+      href: "https://www.w3schools.com/html/default.asp",
     },
     {
       node: <FaCss3Alt style={{ color: "#1572B6" }} />,
       title: "CSS",
-      href: "https://www.w3schools.com/css/",
+      href: "https://www.w3schools.com/css/default.asp",
     },
     {
       node: <FaBootstrap style={{ color: "#7952B3" }} />,
       title: "Bootstrap",
-      href: "https://getbootstrap.com/docs/5.3/getting-started/introduction/",
+      href: "https://www.w3schools.com/bootstrap/bootstrap_ver.asp",
     },
     {
       node: <RiTailwindCssFill style={{ color: "#06B6D4" }} />,
@@ -46,35 +46,44 @@ const Skills: React.FC = () => {
     {
       node: <RiJavascriptFill style={{ color: "#F7DF1E" }} />,
       title: "Javascript",
-      href: "https://www.w3schools.com/js/",
+      href: "https://www.w3schools.com/js/default.asp",
+    },
+    {
+      node: <SiTypescript style={{ color: "#007ACC" }} />,
+      title: "Nodejs",
+      href: "https://www.w3schools.com/typescript/index.php",
     },
     {
       node: <SiReact style={{ color: "#61DAFB" }} />,
       title: "React",
-      href: "https://react.dev/learn",
+      href: "https://www.w3schools.com/react/default.asp",
     },
     {
-      node: <RiNodejsLine style={{ color: "#339933" }} />,
-      title: "Nodejs",
-      href: "https://www.w3schools.com/nodejs/",
+      node: (
+        <RiNextjsFill
+          style={{
+            color: "#000",
+            background: "radial-gradient(circle, #fff 50%, transparent 52%)",
+            borderRadius: "50%",
+          }}
+        />
+      ),
+      title: "React",
+      href: "https://nextjs.org/docs",
     },
     {
-      node: <img src={PythonIcon} alt="" />,
+      node: <img src={PythonIcon} alt="" style={{ transform: "scale(1.2)" }} />,
       title: "Python",
-      href: "https://docs.python.org/3/",
+      href: "https://www.w3schools.com/python/default.asp",
     },
     {
       node: (
         <BiLogoDjango
-          style={{
-            borderRadius: "15px",
-            background: "#092E20",
-            color: "#fff",
-          }}
+          style={{ color: "#fff", background: "#092E20", borderRadius: "15px" }}
         />
       ),
       title: "Django",
-      href: "https://docs.djangoproject.com/en/5.2/",
+      href: "https://docs.djangoproject.com/en/6.0/",
     },
     {
       node: <FaDatabase style={{ color: "#00618A" }} />,
@@ -84,7 +93,7 @@ const Skills: React.FC = () => {
     {
       node: <SiPhp style={{ color: "#777BB4" }} />,
       title: "PHP",
-      href: "https://www.w3schools.com/php/",
+      href: "https://www.w3schools.com/php/default.asp",
     },
     {
       node: <FaWordpress style={{ color: "#21759B" }} />,
@@ -94,30 +103,25 @@ const Skills: React.FC = () => {
     {
       node: <FaLaravel style={{ color: "#FF2D20" }} />,
       title: "Laravel",
-      href: "https://laravel.com/docs/12.x",
+      href: "https://laravel.com/docs/",
     },
     {
-      node: <FaDartLang style={{ color: "#0175C2" }} />,
-      title: "Dart",
-      href: "https://dart.dev/docs",
-    },
-    {
-      node: <FaFlutter style={{ color: "#02569B" }} />,
-      title: "Flutter",
-      href: "https://docs.flutter.dev/",
+      node: <img src={JavaIcon} alt="" style={{ transform: "scale(1.2)" }} />,
+      title: "Java",
+      href: "https://www.w3schools.com/java/default.asp",
     },
     {
       node: <FaGitAlt style={{ color: "#F05032" }} />,
       title: "Git",
-      href: "https://git-scm.com/docs",
+      href: "https://www.w3schools.com/git/default.asp",
     },
     {
       node: <FaGithub className="themed-text" />,
       title: "Github",
-      href: "https://docs.github.com/en",
+      href: "https://www.w3schools.com/git/default.asp",
     },
     {
-      node: <p className="themed-text ai">AI</p>,
+      node: <p className="themed-text">AI</p>,
       title: "AI",
       href: "https://chatgpt.com/",
     },
@@ -141,9 +145,9 @@ const Skills: React.FC = () => {
       </div>
       <LogoLoop
         logos={techLogos}
-        speed={150}
+        speed={120}
         direction="right"
-        logoHeight={110}
+        logoHeight={100}
         gap={40}
         hoverSpeed={0}
         scaleOnHover

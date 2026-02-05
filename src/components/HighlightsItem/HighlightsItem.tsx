@@ -1,50 +1,15 @@
-import React from "react";
-import CountUp from "../CountUp/CountUp";
-import "./HighlightsItem.css";
+import DiamondCard from "../DiamondCard/DiamondCard";
 
-// --- Interfaces ---
-interface HighlightItemData {
-  id?: string | number;
-  aos?: string;
-  icon: React.ReactNode;
-  title: string;
-  counter: number;
-}
-
-interface HighlightsItemProps {
-  item: HighlightItemData;
-  isMobile: boolean;
-  round?: boolean;
-  style?: React.CSSProperties;
-  itemRef?: React.RefObject<HTMLDivElement | null>;
-  className?: string;
-}
-
-const HighlightsItem: React.FC<HighlightsItemProps> = ({
+const HighlightsItem = ({
   item,
   isMobile,
-  round,
-  itemRef,
+}: {
+  item: any;
+  isMobile: boolean;
 }) => {
   return (
-    <div
-      data-aos={item.aos}
-      ref={itemRef}
-      className={`${isMobile ? "mobile-highlights-item" : "desktop-highlights-item"} ${round ? "round" : ""}`}
-    >
-      <i>{item.icon}</i>
-
-      <CountUp
-        from={0}
-        to={item.counter}
-        separator=","
-        direction="up"
-        duration={1}
-        className="count-up themed-text"
-        startWhen={true}
-      />
-
-      <p className="themed-text">{item.title}</p>
+    <div className="highlights-wrapper" data-aos={item.aos}>
+      <DiamondCard item={item} isMobile={isMobile} showCounter={true} />
     </div>
   );
 };

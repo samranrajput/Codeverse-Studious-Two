@@ -14,6 +14,7 @@
     "babylonjs": "^8.46.2",
     "babylonjs-gui": "^8.46.2",
     "gsap": "^3.14.2",
+    "lucide-react": "^0.563.0",
     "matter-js": "^0.20.0",
     "motion": "^12.26.2",
     "react": "^19.2.0",
