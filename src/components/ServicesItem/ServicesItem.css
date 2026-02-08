@@ -1,73 +1,19 @@
-.mobile-services-item,
-.desktop-services-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 1em;
-  padding: 2em 1em;
-  border: 0.8em ridge #00a384;
-  border-radius: 2em;
-  background: linear-gradient(
-    to left top,
-    rgba(0, 163, 132, 0.9),
-    rgba(0, 163, 132, 0.5),
-    rgba(0, 163, 132, 0.3),
-    rgba(0, 163, 132, 0.1),
-    rgba(0, 163, 132, 0.1),
-    rgba(0, 163, 132, 0.3),
-    rgba(0, 163, 132, 0.5),
-    rgba(0, 163, 132, 0.9)
-  );
-  backdrop-filter: blur(5px);
-}
-
-.desktop-services-item {
+.card-variant-services.desktop-item {
   width: 28vw;
 }
 
-.mobile-services-item {
+.card-variant-services.mobile-item {
   width: 85vw;
-  height: 100%;
-  cursor: grab;
-}
-
-.mobile-services-item:active {
-  cursor: grabbing;
-}
-
-.desktop-services-item i,
-.mobile-services-item i {
-  font-size: 4rem;
-}
-
-.desktop-services-item h2,
-.desktop-services-item p,
-.mobile-services-item h2,
-.mobile-services-item p {
-  font-weight: bold;
-  text-align: center;
-}
-
-.mobile-services-item p {
-  font-size: 1.2rem;
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
-  .desktop-services-item {
-    width: 42vw;
+  .card-variant-services.desktop-item {
+    width: 40vw;
   }
 }
 
 @media (max-width: 960px) and (orientation: landscape) {
-  .desktop-services-item {
+  .card-variant-services.desktop-item {
     width: 27vw;
   }
 }
-
-/* @media (max-width: 450px) and (orientation: portrait) {
-  .mobile-services-item {
-    height: 130vw;
-    row-gap: 1em;
-  }
-} */

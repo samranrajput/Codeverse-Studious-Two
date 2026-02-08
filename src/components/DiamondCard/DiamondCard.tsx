@@ -1,5 +1,4 @@
 import React from "react";
-import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import CountUp from "../CountUp/CountUp";
 import "./DiamondCard.css";
@@ -11,6 +10,7 @@ interface DiamondCardItemData {
   description?: string;
   extraInfo?: string;
   aos?: string;
+  className?: string;
 }
 
 interface Props {
@@ -18,6 +18,7 @@ interface Props {
   isMobile: boolean;
   round?: boolean;
   showCounter?: boolean;
+  variant?: "highlights" | "services";
 }
 
 const DiamondCard: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const DiamondCard: React.FC<Props> = ({
   isMobile,
   round,
   showCounter = true,
+  variant = "highlights", // Default value
 }) => {
   return (
     <motion.div
@@ -32,51 +34,25 @@ const DiamondCard: React.FC<Props> = ({
       whileInView={{ scale: 1, opacity: 1 }}
       whileHover={{ y: -10 }}
       viewport={{ once: true }}
-      className={`${isMobile ? "mobile-item" : "desktop-item"} ${round ? "round" : ""}`}
+      className={`${isMobile ? "mobile-item" : "desktop-item"} ${round ? "round" : ""} card-variant-${variant}`}
     >
-      {/* 1. MOVING PATTERN (Wahi purana wala) */}
-      <div className="moving-diamond-pattern"></div>
-
-      {/* 2. HOLOGRAPHIC SHINING SWIPE (Jo aapko pasand aya) */}
-      <div className="holo-swipe"></div>
-
-      {/* 3. DARK OVERLAY (Top transparent, Bottom black) */}
-      <div className="dark-overlay"></div>
-
-      {/* Header Icon */}
-      {item.icon && <i className="icon-badge">{item.icon}</i>}
-
-      <div className="stat-centerpiece">
-        {/* Counter Logic */}
+      <div className="moving-diamond-pattern">
+        {item.icon && <i>{item.icon}</i>}
         {showCounter && item.counter !== undefined && (
           <div className="counter-container">
-            <CountUp
-              to={item.counter}
-              from={0}
-              className="diamond-count themed-text"
-            />
-            <span className="plus-sign">+</span>
+            <CountUp to={item.counter} from={0} className="themed-text" />
+            <span className="plus-sign themed-text">+</span>
           </div>
         )}
-      </div>
-
-      <div className="card-bottom">
-        <h2 className="stat-title themed-text">{item.title}</h2>
+        <h2 className="title themed-text">{item.title}</h2>
 
         {item.description && (
           <p className="card-description themed-text">{item.description}</p>
         )}
 
         {item.extraInfo && <span className="extra-tag">{item.extraInfo}</span>}
-
-        <div className="divider-gaming">
-          <span className="line-half"></span>
-          <Zap size={20} className="zap-icon-glow" />
-          <span className="line-half"></span>
-        </div>
       </div>
-
-      {/* Corner Accents */}
+      <div className="holo-swipe"></div>
       <div className="g-corner g-tl"></div>
       <div className="g-corner g-br"></div>
     </motion.div>

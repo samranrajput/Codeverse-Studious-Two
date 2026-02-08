@@ -1,4 +1,5 @@
 import DiamondCard from "../DiamondCard/DiamondCard";
+import "./HighlightsItem.css";
 
 const HighlightsItem = ({
   item,
@@ -6,11 +7,16 @@ const HighlightsItem = ({
 }: {
   item: any;
   isMobile: boolean;
+  round?: boolean;
 }) => {
   return (
-    <div className="highlights-wrapper" data-aos={item.aos}>
-      <DiamondCard item={item} isMobile={isMobile} showCounter={true} />
-    </div>
+    <DiamondCard
+      item={item}
+      isMobile={isMobile}
+      showCounter={true}
+      data-aos={item.aos}
+      variant="highlights"
+    />
   );
 };
 

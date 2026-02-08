@@ -1,42 +1,15 @@
-import React from "react";
+import DiamondCard from "../DiamondCard/DiamondCard";
 import "./ServicesItem.css";
 
-// --- Interfaces ---
-interface ServicesItemData {
-  id?: string | number;
-  aos?: string;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface ServicesItemProps {
-  item: ServicesItemData;
-  isMobile: boolean;
-  round?: boolean;
-  style?: React.CSSProperties;
-  itemRef?: React.RefObject<HTMLDivElement | null>;
-  className?: string;
-}
-
-const ServicesItem: React.FC<ServicesItemProps> = ({
-  item,
-  isMobile,
-  round,
-  itemRef,
-}) => {
+const ServicesItem = ({ item, isMobile }: { item: any; isMobile: boolean }) => {
   return (
-    <div
+    <DiamondCard
+      item={item}
+      isMobile={isMobile}
+      showCounter={false}
       data-aos={item.aos}
-      ref={itemRef}
-      className={`${isMobile ? "mobile-services-item" : "desktop-services-item"} ${round ? "round" : ""}`}
-    >
-      <i>{item.icon}</i>
-
-      <h2 className="themed-text">{item.title}</h2>
-
-      <p className="themed-text">{item.description}</p>
-    </div>
+      variant="services"
+    />
   );
 };
 
