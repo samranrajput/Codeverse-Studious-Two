@@ -152,6 +152,7 @@ const Skills: React.FC = () => {
         hoverSpeed={0}
         scaleOnHover
         fadeOut
+        useCustomRender={false}
         fadeOutColor="#00a384"
         ariaLabel="Technology partners"
       />

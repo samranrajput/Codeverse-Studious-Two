@@ -18,9 +18,8 @@ header .shape {
   right: 0;
   width: 50%;
   height: 100vh;
-  background: rgba(0, 163, 133, 0.6);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0, 163, 133, 0.4);
+  backdrop-filter: blur(15px);
   z-index: 1;
   opacity: 0;
   animation: header-shape 3s 4s forwards;
@@ -43,8 +42,8 @@ header .skill-container {
   left: 65%;
   transform: translate(150%, -50%);
   z-index: -1;
-  width: 30vw;
-  height: 30vw;
+  width: 40vw;
+  height: 40vw;
   animation: skill-container-aos 3s 4s forwards;
 }
 
@@ -53,7 +52,7 @@ header .skill-container {
     transform: translate(150%, -50%);
   }
   to {
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
   }
 }
 
@@ -300,8 +299,8 @@ header .container .header-design figure img {
   header .skill-container {
     top: 100%;
     left: 50%;
-    width: 70vw;
-    height: 70vw;
+    width: 75vw;
+    height: 75vw;
     transform: transform(-50, 0%);
     animation: skill-container-aos 3s 4s forwards;
   }
@@ -426,8 +425,8 @@ header .container .header-design figure img {
   }
 
   header .skill-container {
-    width: 95vw;
-    height: 95vw;
+    width: 110vw;
+    height: 110vw;
   }
 
   @keyframes aos-translate {

@@ -81,7 +81,7 @@ const DesktopList: React.FC<CarouselProps> = ({
   renderItem: ItemComponent,
 }) => {
   return (
-    <div className="desktop-highlights-container">
+    <div className="desktop-carousel-container">
       {items.map((item, index) => (
         <ItemComponent
           key={item.id || index}
@@ -191,6 +191,7 @@ const MobileCarousel: React.FC<CarouselProps> = ({
 
   return (
     <div
+      data-aos="zoom-in"
       ref={containerRef}
       className={`carousel-container themed-border ${round ? "round" : ""}`}
       onMouseEnter={() => pauseOnHover && setIsHovered(true)}

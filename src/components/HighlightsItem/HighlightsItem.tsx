@@ -14,7 +14,7 @@ const HighlightsItem = ({
       item={item}
       isMobile={isMobile}
       showCounter={true}
-      data-aos={item.aos}
+      // data-aos={item.aos}
       variant="highlights"
     />
   );

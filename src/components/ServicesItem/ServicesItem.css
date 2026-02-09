@@ -17,3 +17,14 @@
     width: 27vw;
   }
 }
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .card-variant-services.mobile-item {
+    height: 100%;
+  }
+
+  .card-variant-services .moving-diamond-pattern {
+    row-gap: 2em;
+    padding: 2em 0em;
+  }
+}

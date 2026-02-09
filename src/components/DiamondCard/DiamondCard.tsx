@@ -30,10 +30,7 @@ const DiamondCard: React.FC<Props> = ({
 }) => {
   return (
     <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      whileHover={{ y: -10 }}
-      viewport={{ once: true }}
+      data-aos={item.aos}
       className={`${isMobile ? "mobile-item" : "desktop-item"} ${round ? "round" : ""} card-variant-${variant}`}
     >
       <div className="moving-diamond-pattern">
