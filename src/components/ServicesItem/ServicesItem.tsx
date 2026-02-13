@@ -7,6 +7,9 @@ const ServicesItem = ({ item, isMobile }: { item: any; isMobile: boolean }) => {
       item={item}
       isMobile={isMobile}
       showCounter={false}
+      showIcon={true}
+      showProjectImage={false}
+      btnGroup={false}
       data-aos={item.aos}
       variant="services"
     />

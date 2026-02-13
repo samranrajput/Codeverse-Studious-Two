@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Highlights from "./components/Highlights/Highlights";
 import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
 
 const App = () => {
   useEffect(() => {
@@ -53,6 +54,8 @@ const App = () => {
         <Services />
 
         <Skills />
+
+        <Projects />
       </main>
     </>
   );

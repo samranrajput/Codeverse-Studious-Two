@@ -26,6 +26,7 @@
   padding: 2em 0em;
   height: 100%;
   opacity: 0.8;
+  z-index: 2;
   animation: bgMove 20s linear infinite;
 }
 
@@ -90,6 +91,7 @@ html[data-bs-theme="light"] .moving-diamond-pattern {
 .holo-swipe {
   position: absolute;
   inset: 0;
+  touch-action: none;
   background: linear-gradient(
     115deg,
     transparent 30%,
@@ -97,7 +99,7 @@ html[data-bs-theme="light"] .moving-diamond-pattern {
     transparent 70%
   );
   background-size: 200% 100%;
-  z-index: 5;
+  z-index: 1;
   animation: swipe 4s ease-in-out infinite;
 }
 

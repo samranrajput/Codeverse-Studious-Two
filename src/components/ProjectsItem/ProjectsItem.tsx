@@ -1,7 +1,7 @@
 import DiamondCard from "../DiamondCard/DiamondCard";
-import "./HighlightsItem.css";
+import "./ProjectsItem.css";
 
-const HighlightsItem = ({
+const ProjectsItem = ({
   item,
   isMobile,
 }: {
@@ -13,13 +13,13 @@ const HighlightsItem = ({
     <DiamondCard
       item={item}
       isMobile={isMobile}
-      showCounter={true}
-      showIcon={true}
-      showProjectImage={false}
-      btnGroup={false}
-      variant="highlights"
+      showCounter={false}
+      showIcon={false}
+      showProjectImage={true}
+      btnGroup={true}
+      variant="projects"
     />
   );
 };
 
-export default HighlightsItem;
+export default ProjectsItem;
