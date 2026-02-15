@@ -3,7 +3,7 @@
 }
 
 .card-variant-services.mobile-item {
-  width: 85vw;
+  width: 76vw;
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
@@ -15,16 +15,5 @@
 @media (max-width: 960px) and (orientation: landscape) {
   .card-variant-services.desktop-item {
     width: 27vw;
-  }
-}
-
-@media (max-width: 450px) and (orientation: portrait) {
-  .card-variant-services.mobile-item {
-    height: 100%;
-  }
-
-  .card-variant-services .moving-diamond-pattern {
-    row-gap: 2em;
-    padding: 2em 0em;
   }
 }

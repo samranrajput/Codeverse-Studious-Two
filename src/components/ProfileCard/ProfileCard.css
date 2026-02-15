@@ -109,7 +109,7 @@
 
 .pc-shine {
   mask-image: var(--icon);
-  opacity: 0.4 !important;
+  opacity: 0.3;
   mask-mode: luminance;
   mask-repeat: repeat;
   mask-size: 150%;
@@ -333,22 +333,20 @@
 }
 
 .pc-handle {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1;
 }
 
 .pc-status {
-  font-size: 14px;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1;
 }
 
 .pc-contact-btn {
   border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 12px;
+  padding: 10px 15px;
   font-weight: 600;
   background: #00a385;
   color: #fff;
@@ -357,9 +355,13 @@
 }
 
 .pc-contact-btn:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+  transform: scale(1.2);
   transition: all 0.2s ease;
+}
+
+.pc-contact-btn .phone-icon {
+  display: block;
+  font-size: 1.2rem;
 }
 
 .pc-content:not(.pc-avatar-content) {
@@ -394,12 +396,11 @@
   -webkit-background-clip: text;
 }
 
-.pc-details p {
+.pc-details h2 {
   font-weight: 600;
   position: relative;
   top: 0px;
   white-space: nowrap;
-  font-size: 1.5rem;
   margin: 0 auto;
   width: min-content;
   background-image: linear-gradient(to bottom, #fff, #fff);
@@ -435,16 +436,6 @@
   }
 }
 
-.pc-contact-btn .phone-icon {
-  display: none;
-}
-
-@media (max-width: 850px) and (orientation: portrait) {
-  .pc-shine {
-    opacity: 1 !important;
-  }
-}
-
 @media (max-width: 960px) and (orientation: landscape) {
   .pc-card {
     height: 100svh;
@@ -456,7 +447,7 @@
 
   .pc-user-info {
     --ui-inset: 12px;
-    padding: 8px 10px;
+    padding: 5px 8px;
   }
 
   .pc-mini-avatar {
@@ -464,29 +455,17 @@
     height: 40px;
   }
 
-  .pc-user-details {
-    gap: 8px;
-  }
-
-  .pc-handle {
-    font-size: 12px;
-  }
-
-  .pc-status {
-    font-size: 12px;
-  }
-
   .pc-contact-btn {
     padding: 5px 10px;
   }
 
-  .pc-contact-btn span {
-    display: none;
+  .pc-handle,
+  .pc-status {
+    font-size: 0.8rem;
   }
 
-  .pc-contact-btn .phone-icon {
-    display: block;
-    font-size: 1.2rem;
+  .pc-user-details {
+    gap: 5px;
   }
 }
 
@@ -513,28 +492,16 @@
   }
 
   .pc-user-details {
-    gap: 8px;
-  }
-
-  .pc-handle {
-    font-size: 12px;
-  }
-
-  .pc-status {
-    font-size: 12px;
+    gap: 5px;
   }
 
   .pc-contact-btn {
-    padding: 5px 10px;
+    padding: 5px 8px;
   }
 
-  .pc-contact-btn span {
-    display: none;
-  }
-
-  .pc-contact-btn .phone-icon {
-    display: block;
-    font-size: 1.2rem;
+  .pc-handle,
+  .pc-status {
+    font-size: 0.8rem;
   }
 }
 

@@ -3,7 +3,18 @@
 }
 
 .card-variant-highlights.mobile-item {
-  width: 85vw;
+  width: 76vw;
+}
+
+.counter-container {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.plus-sign {
+  font-style: italic;
+  font-weight: bold;
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
@@ -15,6 +26,6 @@
 @media (max-width: 450px) and (orientation: portrait) {
   .card-variant-highlights .moving-diamond-pattern {
     row-gap: 2em;
-    padding: 3em 0em;
+    /* padding: 3em 0em; */
   }
 }

@@ -11,8 +11,7 @@
   width: 50%;
 }
 
-#about .container .about-contant-container .about-contant {
-  font-size: 2rem;
+#about .container .about-contant-container h1 {
   font-weight: bold;
   text-align: center;
   font-family: "Caveat", cursive;

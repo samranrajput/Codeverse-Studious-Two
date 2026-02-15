@@ -4,6 +4,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 
+/* #550000 */
+
 header {
   position: relative;
   overflow: hidden;
@@ -210,7 +212,7 @@ html[data-bs-theme="dark"] {
   --themed-text-color: #fff;
 }
 
-header .container .header-contant .contant {
+header .container .header-contant p {
   font-weight: bold;
   width: 60%;
 }
@@ -386,7 +388,7 @@ header .container .header-design figure img {
     }
   }
 
-  header .container .header-contant .contant {
+  header .container .header-contant p {
     text-align: center;
     width: 100%;
   }

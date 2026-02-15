@@ -60,18 +60,6 @@ html[data-bs-theme="light"] .moving-diamond-pattern {
   border-radius: 10px;
 }
 
-.counter-container {
-  font-size: 3.2rem;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.plus-sign {
-  font-size: 3.2rem;
-  font-style: italic;
-  font-weight: bold;
-}
-
 .title {
   text-align: center;
   text-transform: uppercase;
@@ -137,23 +125,8 @@ html[data-bs-theme="light"] .moving-diamond-pattern {
 }
 
 @media (max-width: 450px) and (orientation: portrait) {
-  .moving-diamond-pattern i {
-    font-size: 5rem;
-  }
-
-  .counter-container {
-    font-size: 4rem;
-  }
-
-  .plus-sign {
-    font-size: 4rem;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .card-description {
-    font-size: 1.3rem;
+  .mobile-item {
+    margin: 2em;
+    height: 90%;
   }
 }

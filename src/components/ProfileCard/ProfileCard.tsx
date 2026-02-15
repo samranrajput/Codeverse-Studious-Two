@@ -67,7 +67,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   title = "Software Engineer",
   handle = "javicodes",
   status = "Online",
-  contactText = "Contact",
   showUserInfo = true,
   onContactClick,
 }) => {
@@ -392,8 +391,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       />
                     </div>
                     <div className="pc-user-text">
-                      <div className="pc-handle">@{handle}</div>
-                      <div className="pc-status">{status}</div>
+                      <p className="pc-handle">@{handle}</p>
+                      <p className="pc-status">{status}</p>
                     </div>
                   </div>
                   <button
@@ -403,7 +402,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     type="button"
                     aria-label={`Contact ${name || "user"}`}
                   >
-                    <span>{contactText}</span>
                     <FaPhoneAlt className="phone-icon" />
                   </button>
                 </div>
@@ -412,7 +410,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             <div className="pc-content">
               <div className="pc-details">
                 <h1>{name}</h1>
-                <p>{title}</p>
+                <h2>{title}</h2>
               </div>
             </div>
           </div>

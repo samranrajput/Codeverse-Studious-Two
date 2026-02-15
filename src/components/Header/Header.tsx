@@ -22,12 +22,42 @@ import {
 
 const Header: React.FC = memo(() => {
   const items = [
-    { icon: <FaGithub />, color: "#00a384", label: "Github" },
-    { icon: <FaInstagram />, color: "#00a384", label: "Instagram" },
-    { icon: <FaTiktok />, color: "#00a384", label: "Tiktok" },
-    { icon: <FaLinkedinIn />, color: "#00a384", label: "Linkedin" },
-    { icon: <FaWhatsapp />, color: "#00a384", label: "Whatsapp" },
-    { icon: <FaFacebookF />, color: "#00a384", label: "Facebook" },
+    {
+      icon: <FaGithub />,
+      color: "#00a384",
+      link: "https://github.com/samranrajput",
+      label: "Github",
+    },
+    {
+      icon: <FaInstagram />,
+      color: "#00a384",
+      link: "https://www.instagram.com/codeverse_studious/",
+      label: "Instagram",
+    },
+    {
+      icon: <FaTiktok />,
+      color: "#00a384",
+      link: "https://www.tiktok.com/@codeverse_studious",
+      label: "Tiktok",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      color: "#00a384",
+      link: "https://www.linkedin.com/in/codeverse-studios/",
+      label: "Linkedin",
+    },
+    {
+      icon: <FaWhatsapp />,
+      color: "#00a384",
+      link: "https://whatsapp.com/channel/0029VaDYqDWHVvTRrQ5OoN3p",
+      label: "Whatsapp",
+    },
+    {
+      icon: <FaFacebookF />,
+      color: "#00a384",
+      link: "https://www.facebook.com/codeversestudious/",
+      label: "Facebook",
+    },
   ];
   return (
     <header id="home">
@@ -105,24 +135,26 @@ const Header: React.FC = memo(() => {
               style={{ paddingLeft: "0.5em" }}
             />
           </h1>
-          <TextType
-            text={[
-              "I'm a Full Stack Web Developer who loves building websites that don't just look great they perform beautifully.",
-              "From dynamic business websites to full-scale web applications, I turn ideas into reality with clean code and modern design.",
-              "My goal is to help businesses grow online through fast, secure, and engaging digital experiences.",
-              "If you're looking for a developer who truly cares about quality, you're in the right place.",
-            ]}
-            typingSpeed={30}
-            pauseDuration={4000}
-            showCursor
-            cursorCharacter="_"
-            deletingSpeed={20}
-            variableSpeedEnabled={false}
-            variableSpeedMin={150}
-            variableSpeedMax={120}
-            cursorBlinkDuration={0.5}
-            className="themed-text contant"
-          />
+          <p>
+            <TextType
+              text={[
+                "I'm a Full Stack Web Developer who loves building websites that don't just look great they perform beautifully.",
+                "From dynamic business websites to full-scale web applications, I turn ideas into reality with clean code and modern design.",
+                "My goal is to help businesses grow online through fast, secure, and engaging digital experiences.",
+                "If you're looking for a developer who truly cares about quality, you're in the right place.",
+              ]}
+              typingSpeed={30}
+              pauseDuration={4000}
+              showCursor
+              cursorCharacter="_"
+              deletingSpeed={20}
+              variableSpeedEnabled={false}
+              variableSpeedMin={150}
+              variableSpeedMax={120}
+              cursorBlinkDuration={0.5}
+              className="themed-text"
+            />
+          </p>
           <div className="icon-container">
             <GlassIcons items={items} className="custom-class" />
           </div>

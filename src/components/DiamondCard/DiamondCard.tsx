@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { FaArrowUpRightFromSquare, FaHeart } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
 import CountUp from "../CountUp/CountUp";
 import "./DiamondCard.css";
 
@@ -37,6 +39,13 @@ const DiamondCard: React.FC<Props> = ({
   btnGroup = false,
   variant = "highlights",
 }) => {
+  const [liked, setLiked] = useState(false);
+
+  const handleLike = (e: React.MouseEvent) => {
+    e.preventDefault(); // Anchor tag redirect rokne ke liye
+    setLiked(!liked);
+  };
+
   return (
     <motion.div
       data-aos={item.aos}
@@ -62,12 +71,41 @@ const DiamondCard: React.FC<Props> = ({
         )}
         {btnGroup && item.webGithubLink !== undefined && (
           <div className="btn-group">
-            <a href={item.webGithubLink}>
+            <a href={item.webLiveLink} target="_blank" rel="noreferrer">
               <i>
-                <FaGithub />
+                <FaArrowUpRightFromSquare />
               </i>
             </a>
-            <a href=""></a>
+
+            {/* Instagram Style Like Button */}
+            <button
+              className="like-button"
+              onClick={handleLike}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+              }}
+            >
+              <motion.i
+                initial={false}
+                animate={{
+                  scale: liked ? [1, 1.5, 1.2, 1] : 1,
+                  color: liked ? "#ff3040" : "#ffffff",
+                }}
+                transition={{ duration: 0.4, times: [0, 0.2, 0.5, 1] }}
+                whileTap={{ scale: 0.8 }}
+                style={{ display: "flex", fontSize: "1.2rem" }}
+              >
+                {liked ? <FaHeart /> : <FaRegHeart />}
+              </motion.i>
+            </button>
+            <a href={item.webGithubLink} target="_blank" rel="noreferrer">
+              <i>
+                <TbBrandGithubFilled />
+              </i>
+            </a>
           </div>
         )}
       </div>

@@ -13,7 +13,9 @@ const Projects: React.FC = () => {
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
-      webGithubLink: "samran",
+      webGithubLink:
+        "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
     {
       id: 2,
@@ -22,7 +24,9 @@ const Projects: React.FC = () => {
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
-      webGithubLink: "samran",
+      webGithubLink:
+        "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
     {
       id: 3,
@@ -33,6 +37,7 @@ const Projects: React.FC = () => {
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
       webGithubLink:
         "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
     {
       id: 4,
@@ -41,7 +46,9 @@ const Projects: React.FC = () => {
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
-      webGithubLink: "samran",
+      webGithubLink:
+        "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
     {
       id: 5,
@@ -50,7 +57,9 @@ const Projects: React.FC = () => {
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
-      webGithubLink: "samran",
+      webGithubLink:
+        "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
     {
       id: 6,
@@ -59,7 +68,9 @@ const Projects: React.FC = () => {
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
-      webGithubLink: "samran",
+      webGithubLink:
+        "https://github.com/samranrajput/Digital-Clock-and-Analog-Clock",
+      webLiveLink: "https://digital-clock-and-analog-clock.vercel.app/",
     },
   ];
 
