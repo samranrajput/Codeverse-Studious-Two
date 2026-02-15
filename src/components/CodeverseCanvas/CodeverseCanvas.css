@@ -3,11 +3,27 @@
 }
 
 html[data-bs-theme="dark"] {
-  --canvas-accent-color: #00a384;
+  --ball-inner-color: #000000;
+  --ball-rim-color: #222222;
+  --logo-color: #a1a1a1;
+  --particle-color: #a1a1a1;
+  --ring-color: #a1a1a1;
 }
 
 html[data-bs-theme="light"] {
-  --canvas-accent-color: #060121;
+  --ball-inner-color: #7e7e7e;
+  --ball-rim-color: #000000;
+  --logo-color: #000000;
+  --particle-color: #000000;
+  --ring-color: #000000;
+}
+
+html[data-bs-theme="dark"] .codeverse-canvas {
+  opacity: 0.8;
+}
+
+html[data-bs-theme="light"] .codeverse-canvas {
+  opacity: 1;
 }
 
 .codeverse-canvas {
@@ -32,24 +48,9 @@ html[data-bs-theme="light"] {
 @keyframes codeverse-canvas {
   from {
     transform: scale(0);
-    opacity: 1;
   }
   to {
-    opacity: 0.4;
     transform: scale(1);
-  }
-}
-
-html[data-bs-theme="light"] .codeverse-canvas .render-canvas {
-  animation: codeverse-canvas-light-mode 0.1s forwards;
-}
-
-@keyframes codeverse-canvas-light-mode {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.6;
   }
 }
 

@@ -26,9 +26,9 @@ body {
 }
 
 html[data-bs-theme="dark"] {
-  --text-color: #fff;
-  --bg-color: #060121;
-  --border-color: #fff;
+  --text-color: #a1a1a1;
+  --bg-color: #000;
+  --border-color: #2e2e2e;
 }
 
 html[data-bs-theme="light"] {

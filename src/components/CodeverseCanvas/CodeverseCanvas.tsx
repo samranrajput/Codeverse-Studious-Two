@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as BABYLON from "babylonjs";
 import * as GUI from "babylonjs-gui";
-import BlurText from "../BlurText/BlurText";
+import BlurText from "../BlurText/BlurText"; // Path check karlein
 import "./CodeverseCanvas.css";
 
 interface Speed {
@@ -11,21 +11,18 @@ interface Speed {
 }
 
 interface CodeverseCanvasProps {
-  // Desktop Props
   ballSize?: number;
   logoSize?: number;
   particleCount?: number;
   ringCount?: number;
   ringGap?: number;
   rotationSpeed?: Speed;
-  // Tablet Props
   tabletBallSize?: number;
   tabletLogoSize?: number;
   tabletParticleCount?: number;
   tabletRingCount?: number;
   tabletRingGap?: number;
   tabletRotationSpeed?: Speed;
-  // Mobile Props
   mobileBallSize?: number;
   mobileLogoSize?: number;
   mobileParticleCount?: number;
@@ -36,8 +33,6 @@ interface CodeverseCanvasProps {
 
 const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  // Responsive settings state
   const [settings, setSettings] = useState({
     ballSize: props.ballSize || 7,
     logoSize: props.logoSize || 3,
@@ -47,12 +42,19 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
     rotationSpeed: props.rotationSpeed || { x: 0.02, y: 0.03, z: 0.01 },
   });
 
-  // Screen size check logic
+  // Helper to fetch live CSS variable colors
+  const getCSSColor = (varName: string) => {
+    const color = getComputedStyle(document.documentElement)
+      .getPropertyValue(varName)
+      .trim();
+    if (!color) return new BABYLON.Color3(0, 1, 0.5); // Fallback color
+    return BABYLON.Color3.FromHexString(color);
+  };
+
   useEffect(() => {
     const updateSettings = () => {
       const width = window.innerWidth;
       if (width <= 450) {
-        // Mobile
         setSettings({
           ballSize: props.mobileBallSize || 3.5,
           logoSize: props.mobileLogoSize || 1.5,
@@ -66,7 +68,6 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
           },
         });
       } else if (width <= 850) {
-        // Tablet
         setSettings({
           ballSize: props.tabletBallSize || 5,
           logoSize: props.tabletLogoSize || 2.2,
@@ -80,7 +81,6 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
           },
         });
       } else {
-        // Desktop
         setSettings({
           ballSize: props.ballSize || 7,
           logoSize: props.logoSize || 3,
@@ -91,7 +91,6 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
         });
       }
     };
-
     updateSettings();
     window.addEventListener("resize", updateSettings);
     return () => window.removeEventListener("resize", updateSettings);
@@ -151,12 +150,12 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
       varying vec3 vNormal;
       varying vec3 vPos;
       uniform vec3 cameraPosition;
+      uniform vec3 innerColor;
+      uniform vec3 rimColor;
       void main(){
         vec3 viewDir = normalize(cameraPosition - vPos);
         float fresnel = pow(1.2 - max(dot(vNormal, viewDir), 0.0), 2.0);
-        vec3 inner = vec3(0.023,0.004,0.129);
-        vec3 rim = vec3(0.0,0.639,0.518);
-        vec3 color = inner + rim * fresnel * 2.0;
+        vec3 color = innerColor + rimColor * fresnel * 2.0;
         float alpha = 0.55 + fresnel * 0.2;
         gl_FragColor = vec4(color, alpha);
       }
@@ -174,7 +173,13 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
       { vertex: "ball", fragment: "ball" },
       {
         attributes: ["position", "normal"],
-        uniforms: ["worldViewProjection", "world", "cameraPosition"],
+        uniforms: [
+          "worldViewProjection",
+          "world",
+          "cameraPosition",
+          "innerColor",
+          "rimColor",
+        ],
         needAlphaBlending: true,
       },
     );
@@ -187,13 +192,12 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
       { size: settings.logoSize },
       scene,
     );
-    logoPlane.rotation.y = 3; // Fixed facing
+    logoPlane.rotation.y = 3;
     logoPlane.renderingGroupId = 2;
     const adt = GUI.AdvancedDynamicTexture.CreateForMesh(logoPlane, 512, 512);
     const txt = new GUI.TextBlock();
     txt.text = "</>";
     txt.fontSize = 360;
-    txt.color = "#00A384";
     txt.fontWeight = "bold";
     adt.addControl(txt);
     const logoMat = new BABYLON.StandardMaterial("logoMat", scene);
@@ -202,7 +206,7 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
     logoMat.disableDepthWrite = true;
     logoPlane.material = logoMat;
 
-    // PARTICLES
+    // PARTICLES (Dynamic Color Updates)
     const pcs = new BABYLON.PointsCloudSystem("pcs", 3, scene);
     pcs.addPoints(settings.particleCount, (p: any) => {
       const r = Math.random() * (settings.ballSize / 2);
@@ -213,7 +217,6 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
         r * Math.sin(u) * Math.sin(t),
         r * Math.cos(u),
       );
-      p.color = new BABYLON.Color4(0, 1, 0.8, 1);
     });
     pcs.buildMeshAsync().then(() => {
       if (pcs.mesh) {
@@ -234,24 +237,52 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
         },
         scene,
       );
-
-      // Atomic Axis Tilt
       if (i === 0) ring.rotation.z = Math.PI / 4;
       if (i === 1) ring.rotation.x = Math.PI / 2.5;
       if (i === 2) ring.rotation.z = -Math.PI / 4;
 
       const rm = new BABYLON.StandardMaterial("rm" + i, scene);
-      rm.emissiveColor = new BABYLON.Color3(0, 0.8, 0.6);
       rm.alpha = 0.8;
       ring.material = rm;
       glow.addIncludedOnlyMesh(ring);
       rings.push(ring);
     }
 
-    // ANIMATION
+    // UPDATE ENGINE (For real-time theme switching)
     scene.onBeforeRenderObservable.add(() => {
+      const currentInner = getCSSColor("--ball-inner-color");
+      const currentRim = getCSSColor("--ball-rim-color");
+      const currentParticle = getCSSColor("--particle-color");
+      const currentRing = getCSSColor("--ring-color");
+      const currentLogo = getComputedStyle(document.documentElement)
+        .getPropertyValue("--logo-color")
+        .trim();
+
+      // Update Ball
       ballMat.setVector3("cameraPosition", camera.position);
-      if (pcs.mesh) pcs.mesh.rotation.y += 0.01;
+      ballMat.setColor3("innerColor", currentInner);
+      ballMat.setColor3("rimColor", currentRim);
+
+      // Update Logo
+      txt.color = currentLogo;
+
+      // Update Rings
+      rings.forEach((r) => {
+        (r.material as BABYLON.StandardMaterial).emissiveColor = currentRing;
+      });
+
+      // Update Particles (Force color refresh)
+      if (pcs.mesh) {
+        pcs.mesh.rotation.y += 0.01;
+        pcs.particles.forEach((p: any) => {
+          p.color.r = currentParticle.r;
+          p.color.g = currentParticle.g;
+          p.color.b = currentParticle.b;
+        });
+        pcs.setParticles();
+      }
+
+      // Ring Rotations
       rings.forEach((r, i) => {
         if (i === 0) r.rotation.y += settings.rotationSpeed.y;
         else if (i === 1) r.rotation.x += settings.rotationSpeed.x;
@@ -274,7 +305,10 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
 
   return (
     <div className="codeverse-canvas">
-      <canvas ref={canvasRef} className="render-canvas" />
+      <canvas
+        ref={canvasRef}
+        className="render-canvas .themed-codeverse-canvas"
+      />
       <BlurText
         text="CODEVERSE STUDIOUS"
         animateBy="letters"

@@ -24,37 +24,37 @@ const Header: React.FC = memo(() => {
   const items = [
     {
       icon: <FaGithub />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://github.com/samranrajput",
       label: "Github",
     },
     {
       icon: <FaInstagram />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://www.instagram.com/codeverse_studious/",
       label: "Instagram",
     },
     {
       icon: <FaTiktok />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://www.tiktok.com/@codeverse_studious",
       label: "Tiktok",
     },
     {
       icon: <FaLinkedinIn />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://www.linkedin.com/in/codeverse-studios/",
       label: "Linkedin",
     },
     {
       icon: <FaWhatsapp />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://whatsapp.com/channel/0029VaDYqDWHVvTRrQ5OoN3p",
       label: "Whatsapp",
     },
     {
       icon: <FaFacebookF />,
-      color: "#00a384",
+      color: "#A1A1A1",
       link: "https://www.facebook.com/codeversestudious/",
       label: "Facebook",
     },
@@ -65,38 +65,38 @@ const Header: React.FC = memo(() => {
       <div className="skill-container">
         <div className="ring">
           <div className="skill skill1">
-            <i className="themed-text">
+            <i>
               <FaCode />
             </i>
-            <p className="themed-text">
+            <p>
               Frontend Web <br />
               Developer
             </p>
           </div>
           <div className="skill skill2">
-            <i className="themed-text">
+            <i>
               <FaDatabase />
             </i>
-            <p className="themed-text">
+            <p>
               Backend Web <br />
               Developer
             </p>
           </div>
           <div className="skill skill3">
-            <i className="themed-text">
+            <i>
               <FaMobileScreenButton />
             </i>
-            <p className="themed-text">
+            <p>
               Mobile Application
               <br />
               Developer
             </p>
           </div>
           <div className="skill skill4">
-            <i className="themed-text">
+            <i>
               <FaPenNib />
             </i>
-            <p className="themed-text">Graphic Designer</p>
+            <p>Graphic Designer</p>
           </div>
         </div>
       </div>
@@ -206,6 +206,13 @@ const Header: React.FC = memo(() => {
             viewBox="0 0 1000 1000"
             style={{ willChange: "transform" } as React.CSSProperties}
           >
+            <defs>
+              <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="20%" stop-color="#7E7E7E" />
+                <stop offset="70%" stop-color="#222222" />
+              </linearGradient>
+            </defs>
+
             <circle className="st0" cx="500" cy="500" r="320">
               <animateTransform
                 attributeName="transform"

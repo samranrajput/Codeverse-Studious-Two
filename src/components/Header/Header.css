@@ -11,7 +11,7 @@ header {
   overflow: hidden;
   z-index: 2;
   height: 100vh;
-  border: 0.8em ridge #00a384;
+  border: 0.8em double #2e2e2e;
 }
 
 header .shape {
@@ -20,7 +20,7 @@ header .shape {
   right: 0;
   width: 50%;
   height: 100vh;
-  background: rgba(0, 163, 133, 0.4);
+  background: rgba(34, 34, 34, 0.1);
   backdrop-filter: blur(15px);
   z-index: 1;
   opacity: 0;
@@ -62,28 +62,28 @@ header .skill-container::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 5px solid #fff;
+  border: 10px double #a1a1a1;
   border-radius: 50%;
   mask: conic-gradient(
     transparent 0deg 15deg,
-    #fff 15deg 80deg,
+    #a1a1a1 15deg 80deg,
     transparent 80deg 105deg,
-    #fff 105deg 170deg,
+    #a1a1a1 105deg 170deg,
     transparent 170deg 190deg,
-    #fff 190deg 260deg,
+    #a1a1a1 190deg 260deg,
     transparent 260deg 285deg,
-    #fff 285deg 350deg,
+    #a1a1a1 285deg 350deg,
     transparent 350deg 360deg
   );
   -webkit-mask: conic-gradient(
     transparent 0deg 15deg,
-    #fff 15deg 80deg,
+    #a1a1a1 15deg 80deg,
     transparent 80deg 105deg,
-    #fff 105deg 170deg,
+    #a1a1a1 105deg 170deg,
     transparent 170deg 190deg,
-    #fff 190deg 260deg,
+    #a1a1a1 190deg 260deg,
     transparent 260deg 285deg,
-    #fff 285deg 350deg,
+    #a1a1a1 285deg 350deg,
     transparent 350deg 360deg
   );
   animation: ring 20s 5s infinite;
@@ -144,9 +144,11 @@ header .skill-container .ring .skill {
   text-align: center;
   width: max-content;
   background: transparent;
+  color: #fff;
 }
 
 header .skill-container .ring .skill i {
+  color: #fff;
   font-size: 2rem;
 }
 
@@ -199,7 +201,7 @@ header .container .header-contant {
 }
 
 header .container .header-contant h1 {
-  color: #00a384;
+  color: #fff;
   font-family: "Permanent Marker", cursive;
   font-weight: 200;
 }
@@ -214,7 +216,7 @@ html[data-bs-theme="dark"] {
 
 header .container .header-contant p {
   font-weight: bold;
-  width: 60%;
+  width: 65%;
 }
 
 header .header-contant .btn-container {
@@ -248,7 +250,7 @@ header .container .header-design svg .st0,
 header .container .header-design svg .st1,
 header .container .header-design svg .st2 {
   fill: none;
-  stroke: #060121;
+  stroke: url(#myGradient);
   stroke-width: 42;
   stroke-miterlimit: 10;
 }
@@ -388,7 +390,7 @@ header .container .header-design figure img {
     }
   }
 
-  header .container .header-contant p {
+  header .container .header-contant .contant {
     text-align: center;
     width: 100%;
   }
