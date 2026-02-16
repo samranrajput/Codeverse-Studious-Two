@@ -66,27 +66,27 @@ const Header: React.FC = memo(() => {
         <div className="ring">
           <div className="skill skill1">
             <i>
-              <FaCode />
+              <FaCode className="themed-main-text" />
             </i>
-            <p>
+            <p className="themed-main-text">
               Frontend Web <br />
               Developer
             </p>
           </div>
           <div className="skill skill2">
             <i>
-              <FaDatabase />
+              <FaDatabase className="themed-main-text" />
             </i>
-            <p>
+            <p className="themed-main-text">
               Backend Web <br />
               Developer
             </p>
           </div>
           <div className="skill skill3">
             <i>
-              <FaMobileScreenButton />
+              <FaMobileScreenButton className="themed-main-text" />
             </i>
-            <p>
+            <p className="themed-main-text">
               Mobile Application
               <br />
               Developer
@@ -94,9 +94,9 @@ const Header: React.FC = memo(() => {
           </div>
           <div className="skill skill4">
             <i>
-              <FaPenNib />
+              <FaPenNib className="themed-main-text" />
             </i>
-            <p>Graphic Designer</p>
+            <p className="themed-main-text">Graphic Designer</p>
           </div>
         </div>
       </div>
@@ -117,6 +117,7 @@ const Header: React.FC = memo(() => {
               variableSpeedMax={120}
               cursorBlinkDuration={0.5}
               style={{ paddingLeft: "0.5em" }}
+              className="themed-main-text"
             />
           </h1>
           <h1>
@@ -133,6 +134,7 @@ const Header: React.FC = memo(() => {
               variableSpeedMax={120}
               cursorBlinkDuration={0.5}
               style={{ paddingLeft: "0.5em" }}
+              className="themed-main-text"
             />
           </h1>
           <p>
@@ -163,18 +165,17 @@ const Header: React.FC = memo(() => {
               href={myResume}
               target="_blank"
               rel="noreferrer"
-              className="themed-text themed-border btn"
+              className="themed-main-text themed-border btn"
             >
               <ShinyText
                 text="My Resume !"
                 speed={2}
-                delay={0}
-                shineColor="#00a384"
                 spread={130}
                 direction="left"
                 yoyo
                 pauseOnHover
                 disabled={false}
+                className="themed-shine-text"
               />
             </a>
 
@@ -182,18 +183,17 @@ const Header: React.FC = memo(() => {
               href="https://wa.me/923172960156"
               target="_blank"
               rel="noreferrer"
-              className="themed-text themed-border btn"
+              className="themed-main-text themed-border btn"
             >
               <ShinyText
                 text="Hire Me Now !"
                 speed={2}
-                delay={0}
-                shineColor="#00a384"
                 spread={130}
                 direction="left"
                 yoyo
                 pauseOnHover
                 disabled={false}
+                className="themed-shine-text"
               />
             </a>
           </div>

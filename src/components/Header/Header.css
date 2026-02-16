@@ -66,24 +66,24 @@ header .skill-container::before {
   border-radius: 50%;
   mask: conic-gradient(
     transparent 0deg 15deg,
-    #a1a1a1 15deg 80deg,
+    #292929 15deg 80deg,
     transparent 80deg 105deg,
-    #a1a1a1 105deg 170deg,
+    #292929 105deg 170deg,
     transparent 170deg 190deg,
-    #a1a1a1 190deg 260deg,
+    #292929 190deg 260deg,
     transparent 260deg 285deg,
-    #a1a1a1 285deg 350deg,
+    #292929 285deg 350deg,
     transparent 350deg 360deg
   );
   -webkit-mask: conic-gradient(
     transparent 0deg 15deg,
-    #a1a1a1 15deg 80deg,
+    #292929 15deg 80deg,
     transparent 80deg 105deg,
-    #a1a1a1 105deg 170deg,
+    #292929 105deg 170deg,
     transparent 170deg 190deg,
-    #a1a1a1 190deg 260deg,
+    #292929 190deg 260deg,
     transparent 260deg 285deg,
-    #a1a1a1 285deg 350deg,
+    #292929 285deg 350deg,
     transparent 350deg 360deg
   );
   animation: ring 20s 5s infinite;
@@ -144,7 +144,6 @@ header .skill-container .ring .skill {
   text-align: center;
   width: max-content;
   background: transparent;
-  color: #fff;
 }
 
 header .skill-container .ring .skill i {
@@ -201,7 +200,7 @@ header .container .header-contant {
 }
 
 header .container .header-contant h1 {
-  color: #fff;
+  /* color: #fff; */
   font-family: "Permanent Marker", cursive;
   font-weight: 200;
 }
@@ -279,7 +278,7 @@ header .container .header-design figure {
 }
 
 header .container .header-design figure img {
-  border-radius: 250px;
+  border-radius: 105px;
 }
 
 @media (max-width: 850px) and (orientation: portrait) {

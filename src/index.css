@@ -11,10 +11,75 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.themed-text {
-  color: var(--text-color) !important;
+html[data-bs-theme="dark"] {
+  /* default themes */
+  --main-text-color: #fff;
+  --text-color: #a1a1a1;
+  --bg-color: #000;
+  --border-color: #292929;
+
+  /* codeverse canvas theme */
+  --ball-inner-color: #000000;
+  --ball-rim-color: #222222;
+  --logo-color: #a1a1a1;
+  --particle-color: #a1a1a1;
+  --ring-color: #a1a1a1;
+
+  /* navbar logo theme */
+  --navbar-logo-url: url("./assets/images/navbar-dark-logo.png");
+
+  /* nav item active theme */
+  --nav-item-bg-color: #fff;
+  --nav-item-text-color: #000;
+
+  /* shiny text theme */
+  --shine-highlight: #000;
+
+  /* glass icon theme */
+  --glass-icon-back-color: #a1a1a1;
+  --glass-icon-front-color: rgba(0, 0, 0, 0.5);
+}
+
+html[data-bs-theme="light"] {
+  /* default themes */
+  --main-text-color: #000;
+  --text-color: #666;
+  --bg-color: #fff;
+  --border-color: #bdbdbd;
+
+  /* codeverse canvas theme */
+  --ball-inner-color: #7e7e7e;
+  --ball-rim-color: #000000;
+  --logo-color: #000000;
+  --particle-color: #000000;
+  --ring-color: #000000;
+
+  /* navbar logo theme */
+  --navbar-logo-url: url("./assets/images/navbar-light-logo.png");
+
+  /* nav item active theme */
+  --nav-item-bg-color: #000;
+  --nav-item-text-color: #fff;
+
+  /* shiny text theme */
+  --shine-highlight: #ffffff;
+
+  /* glass icon theme */
+  --glass-icon-back-color: #292929;
+  --glass-icon-front-color: rgba(255, 255, 255, 0.5);
+}
+
+/* default themes */
+.themed-main-text {
+  color: var(--main-text-color);
   transition: color 2s ease;
 }
+
+.themed-text {
+  color: var(--text-color);
+  transition: color 2s ease;
+}
+
 .themed-bg {
   background-color: var(--bg-color);
   transition: background-color 2s ease;
@@ -25,14 +90,36 @@ body {
   transition: background-color 2s ease;
 }
 
-html[data-bs-theme="dark"] {
-  --text-color: #a1a1a1;
-  --bg-color: #000;
-  --border-color: #2e2e2e;
+/* codeverse canvas theme */
+.themed-codeverse-canvas {
+  transition: all 0.3s ease;
 }
 
-html[data-bs-theme="light"] {
-  --text-color: #060121;
-  --bg-color: #fff;
-  --border-color: #060121;
+/* navbar logo theme */
+.themed-navbar-logo {
+  content: var(--navbar-logo-url);
+  /* display: block; */
+}
+
+/* nav item active theme */
+nav ul li.active {
+  background: var(--nav-item-bg-color);
+}
+
+nav ul li.active a {
+  color: var(--nav-item-text-color) !important;
+}
+
+/* shiny text theme */
+.themed-shine-text {
+  transition: color 2s ease;
+}
+
+/* glass icon themes */
+.themed-glass-icon-back {
+  background: var(--glass-icon-back-color);
+}
+
+.themed-glass-icon-front {
+  background: var(--glass-icon-front-color);
 }

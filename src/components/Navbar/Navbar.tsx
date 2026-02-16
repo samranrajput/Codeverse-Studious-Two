@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import sideBarLogo from "../../assets/images/logo2.png";
-import logo from "../../assets/images/logo.png";
+// import logo from "../../assets/images/logo.png";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import "./Navbar.css";
 
@@ -78,7 +78,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="themed-border">
       <figure className="navbar-logo">
-        <img src={logo} alt="Codeverse Studious Navbar Logo" />
+        <img
+          className="themed-navbar-logo"
+          alt="Codeverse Studious Navbar Logo"
+        />
       </figure>
 
       <ul ref={navRef} className={`${menuOpen ? "active" : ""}`}>

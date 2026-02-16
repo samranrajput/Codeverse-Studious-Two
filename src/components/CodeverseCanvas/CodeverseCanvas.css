@@ -1,29 +1,9 @@
-.themed-codeverse-canvas {
-  transition: all 0.3s ease;
-}
-
-html[data-bs-theme="dark"] {
-  --ball-inner-color: #000000;
-  --ball-rim-color: #222222;
-  --logo-color: #a1a1a1;
-  --particle-color: #a1a1a1;
-  --ring-color: #a1a1a1;
-}
-
-html[data-bs-theme="light"] {
-  --ball-inner-color: #7e7e7e;
-  --ball-rim-color: #000000;
-  --logo-color: #000000;
-  --particle-color: #000000;
-  --ring-color: #000000;
-}
-
 html[data-bs-theme="dark"] .codeverse-canvas {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 html[data-bs-theme="light"] .codeverse-canvas {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .codeverse-canvas {

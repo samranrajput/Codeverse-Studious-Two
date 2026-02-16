@@ -5,11 +5,11 @@ nav {
   max-width: 95%;
   width: 92%;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0.3em 2em;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   transform: translateY(-120%);
@@ -26,7 +26,8 @@ nav {
 }
 
 nav .navbar-logo {
-  width: 12%;
+  width: 14%; 
+  display: block;
 }
 
 nav ul {
@@ -41,15 +42,6 @@ nav ul li {
   transition: all 1s ease;
   padding: 0.4em 1em;
 }
-
-nav ul li.active {
-  background: #fff;
-}
-
-nav ul li.active a {
-  color: #000 !important;
-}
-
 
 nav .burger-menu {
   display: none;
