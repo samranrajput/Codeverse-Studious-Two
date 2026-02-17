@@ -65,8 +65,6 @@ const Services: React.FC = () => {
         <ShinyText
           text="Services"
           speed={2}
-          delay={0}
-          shineColor="#00a384"
           spread={135}
           direction="left"
           yoyo

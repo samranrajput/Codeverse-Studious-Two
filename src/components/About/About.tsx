@@ -12,8 +12,6 @@ const About: React.FC = memo(() => {
         <ShinyText
           text="About Us"
           speed={2}
-          delay={0}
-          shineColor="#00a384"
           spread={135}
           direction="left"
           yoyo
@@ -47,8 +45,6 @@ const About: React.FC = memo(() => {
               text="I started learning programming at the age of 15, and now at 18, I
             proudly hold 6 programming certificates."
               speed={2}
-              delay={0}
-              shineColor="#00a384"
               spread={135}
               direction="left"
               yoyo
@@ -63,8 +59,6 @@ const About: React.FC = memo(() => {
             for coding drives me to create powerful, dynamic, and visually
             appealing websites that bring ideas to life."
               speed={2}
-              delay={0}
-              shineColor="#00a384"
               spread={135}
               direction="left"
               yoyo
@@ -79,8 +73,6 @@ const About: React.FC = memo(() => {
             past three years, I have built many real-world projects some of
             which you can explore below in the projects section."
               speed={2}
-              delay={0}
-              shineColor="#00a384"
               spread={135}
               direction="left"
               yoyo

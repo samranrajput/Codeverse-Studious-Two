@@ -80,8 +80,6 @@ const Projects: React.FC = () => {
         <ShinyText
           text="Projects"
           speed={2}
-          delay={0}
-          shineColor="#00a384"
           spread={135}
           direction="left"
           yoyo
