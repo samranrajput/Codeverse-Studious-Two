@@ -60,7 +60,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" style={{ overflow: "hidden"}}>
+    <section id="services" style={{ overflow: "hidden" }}>
       <div className="sections-heading-container" data-aos="fade-down">
         <ShinyText
           text="Services"
