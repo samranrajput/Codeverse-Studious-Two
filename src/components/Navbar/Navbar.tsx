@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import BackgroundAudio from "../BackgroundAudio/BackgroundAudio";
 import sideBarLogo from "../../assets/images/logo2.png";
 // import logo from "../../assets/images/logo.png";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
@@ -106,16 +107,17 @@ const Navbar: React.FC = () => {
       </ul>
 
       <div
-        className={`theme-toggle-burger-menu-side ${menuOpen ? "active-style" : ""}`}
+        className={`theme-toggle-burger-menu-side  ${menuOpen ? "active-style" : ""}`}
       >
+        <BackgroundAudio />
         <ThemeToggle />
-        <div className="burger-menu" onClick={toggleMenu}>
+        <div className="burger-menu navbar-btn-group" onClick={toggleMenu}>
           {menuOpen ? (
-            <HiX className="themed-text" style={{ fontSize: "2.5rem" }} />
+            <HiX className="themed-text" style={{ fontSize: "1.4rem" }} />
           ) : (
             <HiMenuAlt4
               className="themed-text"
-              style={{ fontSize: "2.5rem" }}
+              style={{ fontSize: "1.4rem" }}
             />
           )}
         </div>

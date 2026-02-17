@@ -27,16 +27,15 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button
-      data-aos="fade-left"
       id="themeToggle"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      style={{ background: "none", border: "none", cursor: "pointer" }}
+      className="navbar-btn-group"
     >
       {theme === "dark" ? (
-        <FaMoon className="themed-text" style={{ fontSize: "1.6rem" }} />
+        <FaMoon className="themed-text" style={{ fontSize: "1.4rem" }} />
       ) : (
-        <FaSun className="themed-text" style={{ fontSize: "1.6rem" }} />
+        <FaSun className="themed-text" style={{ fontSize: "1.4rem" }} />
       )}
     </button>
   );

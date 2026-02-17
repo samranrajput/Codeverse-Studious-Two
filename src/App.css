@@ -46,6 +46,38 @@ a {
   transform: scale(0.9);
 }
 
+.navbar-btn-group {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 2em;
+  /* width: 10px; */
+  /* height: 10px; */
+  padding: 0.6em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+html[data-bs-theme="dark"] .navbar-btn-group {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+html[data-bs-theme="light"] .navbar-btn-group {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.navbar-btn-group:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
 @media (max-width: 960px) and (orientation: landscape) {
   html,
   body {
