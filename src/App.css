@@ -90,6 +90,13 @@ html[data-bs-theme="light"] .navbar-btn-group {
   }
 }
 
+@media (max-width: 960px) and (orientation: landscape) {
+  html,
+  body {
+    font-size: 80%;
+  }
+}
+
 @media (max-width: 450px) and (orientation: portrait) {
   html,
   body {

@@ -37,9 +37,8 @@ html[data-bs-theme="light"] .codeverse-canvas {
 .codeverse-canvas .codeverse-canvas-heading {
   font-family: "Caveat", cursive;
   letter-spacing: 5px;
-  font-weight: 800;
+  font-weight: bold;
   font-size: 3rem;
-  color: #00a384;
   animation: codeverse-canvas-heading 10s forwards;
 }
 

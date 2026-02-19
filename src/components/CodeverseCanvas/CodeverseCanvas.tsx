@@ -314,7 +314,7 @@ const CodeverseCanvas: React.FC<CodeverseCanvasProps> = (props) => {
         animateBy="letters"
         direction="bottom"
         delay={120}
-        className="codeverse-canvas-heading"
+        className="codeverse-canvas-heading themed-main-text"
       />
     </div>
   );

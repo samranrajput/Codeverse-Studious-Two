@@ -369,7 +369,15 @@ header .container .header-design figure {
     }
   }
 
+  header .container .header-contant h1 {
+    border-radius: 0.5em;
+    backdrop-filter: blur(2px);
+    text-align: center;
+  }
+
   header .container .header-contant p {
+    border-radius: 0.5em;
+    backdrop-filter: blur(2px);
     text-align: center;
     width: 100%;
   }
