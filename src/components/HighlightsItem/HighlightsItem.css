@@ -1,31 +1,19 @@
-.card-variant-highlights.desktop-item {
+#highlights .container .desktop-carousel-container .desktop-item {
   width: 20vw;
 }
 
-.card-variant-highlights.mobile-item {
+#highlights .container .carousel-container .mobile-item {
   width: 76vw;
 }
 
 .counter-container {
   font-size: 3.5rem;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.plus-sign {
-  font-style: italic;
   font-weight: bold;
+  font-style: italic;
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
-  .card-variant-highlights.desktop-item {
+  #highlights .container .desktop-carousel-container .desktop-item {
     width: 40vw;
-  }
-}
-
-@media (max-width: 450px) and (orientation: portrait) {
-  .card-variant-highlights .moving-diamond-pattern {
-    row-gap: 2em;
-    /* padding: 3em 0em; */
   }
 }

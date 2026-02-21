@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import headerImage from "../../assets/images/my_image.png";
-import ProfileCardIcon from "../../assets/images/logo2.png";
+import ProfileCardIcon from "../../assets/images/side-bar-dark-logo.png";
 import ShinyText from "../ShinyText/ShinyText";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import "./About.css";
@@ -35,8 +35,8 @@ const About: React.FC = memo(() => {
           onContactClick={() => console.log("Contact clicked")}
           showIcon={true}
           showBehindGlow={true}
-          behindGlowColor="hsla(169, 100%, 32%, 0.6)"
-          customInnerGradient="linear-gradient(145deg,hsla(153, 40%, 45%, 0.55) 0%,hsla(283, 60%, 70%, 0.27) 100%)"
+          behindGlowColor="rgba(255, 255, 255, 0.6)"
+          customInnerGradient="linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(0, 0, 0) 100%)"
         />
 
         <div className="about-contant-container" data-aos="fade-left">

@@ -76,6 +76,61 @@ html[data-bs-theme="light"] .navbar-btn-group {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
+/* Section cards */
+.desktop-item,
+.mobile-item {
+  width: 28vw;
+  overflow: hidden;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+  padding: 2em 0em;
+}
+
+.mobile-item {
+  width: 76vw;
+  cursor: grab;
+}
+
+.mobile-item:active {
+  cursor: grabbing;
+}
+
+.holo-swipe {
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+  opacity: 0.6;
+  z-index: 1;
+  animation: swipe 4s ease-in-out infinite;
+}
+
+@keyframes swipe {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.desktop-item i,
+.mobile-item i {
+  font-size: 3.5rem;
+  border-radius: 10px;
+}
+
+.desktop-item h1,
+.mobile-item h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+}
+
 @media (max-width: 960px) and (orientation: landscape) {
   html,
   body {

@@ -360,9 +360,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     >
       {behindGlowEnabled && <div className="pc-behind" />}
       <div ref={shellRef} className="pc-card-shell">
-        <section className="pc-card">
+        <section className="pc-card themed-border themed-profile-card-bg">
           <div className="pc-inside">
-            <div className="pc-shine" />
+            <div className="pc-shine themed-profile-card-logo" />
             <div className="pc-glare" />
             <div className="pc-content pc-avatar-content">
               <img
@@ -376,9 +376,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 }}
               />
               {showUserInfo && (
-                <div className="pc-user-info">
+                <div className="pc-user-info themed-border">
                   <div className="pc-user-details">
-                    <div className="pc-mini-avatar">
+                    <div className="pc-mini-avatar themed-border">
                       <img
                         src={miniAvatarUrl || avatarUrl}
                         alt={`${name || "User"} mini avatar`}
@@ -395,20 +395,23 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       <p className="pc-status">{status}</p>
                     </div>
                   </div>
-                  <button
-                    className="pc-contact-btn"
+                  <a
+                    href="https://wa.me/923172960156"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pc-contact-btn themed-bg themed-border"
                     onClick={handleContactClick}
                     style={{ pointerEvents: "auto" }}
                     type="button"
                     aria-label={`Contact ${name || "user"}`}
                   >
-                    <FaPhoneAlt className="phone-icon" />
-                  </button>
+                    <FaPhoneAlt className="phone-icon themed-text" />
+                  </a>
                 </div>
               )}
             </div>
             <div className="pc-content">
-              <div className="pc-details">
+              <div className="pc-details themed-main-text">
                 <h1>{name}</h1>
                 <h2>{title}</h2>
               </div>

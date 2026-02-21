@@ -28,6 +28,9 @@ html[data-bs-theme="dark"] {
   /* navbar logo theme */
   --navbar-logo-url: url("./assets/images/navbar-dark-logo.png");
 
+  /* navbar logo theme */
+  --side-bar-logo-url: url("./assets/images/side-bar-dark-logo.png");
+
   /* nav item active theme */
   --nav-item-bg-color: #fff;
   --nav-item-text-color: #000;
@@ -38,6 +41,28 @@ html[data-bs-theme="dark"] {
   /* glass icon theme */
   --glass-icon-back-color: #a1a1a1;
   --glass-icon-front-color: rgba(0, 0, 0, 0.5);
+
+  /* profile card theme */
+  --profile-card-logo-bg-color: #fff;
+  --profile-card-bg-color: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.3),
+    rgba(0, 0, 0, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  --profile-card-bg-blur: blur(5px);
+
+  /* section card theme */
+  --section-card-bg-color: blur(5px);
+  --section-card-border-color: 0.5em double #fff;
+  --section-card-shadow-color: 0 0 30px rgba(255, 255, 255, 0.9);
+  
+  --holo-swipe-color: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 70%
+  );
 }
 
 html[data-bs-theme="light"] {
@@ -57,6 +82,9 @@ html[data-bs-theme="light"] {
   /* navbar logo theme */
   --navbar-logo-url: url("./assets/images/navbar-light-logo.png");
 
+  /* navbar logo theme */
+  --side-bar-logo-url: url("./assets/images/side-bar-light-logo.png");
+
   /* nav item active theme */
   --nav-item-bg-color: #000;
   --nav-item-text-color: #fff;
@@ -67,38 +95,60 @@ html[data-bs-theme="light"] {
   /* glass icon theme */
   --glass-icon-back-color: #292929;
   --glass-icon-front-color: rgba(255, 255, 255, 0.5);
+
+  /* profile card theme */
+  --profile-card-logo-bg-color: #000;
+  --profile-card-bg-color: linear-gradient(
+    to left top,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 1),
+    rgba(0, 0, 0, 0.8)
+  );
+  --profile-card-bg-blur: blur(5px);
+
+  /* section card theme */
+  --section-card-bg-color: blur(5px);
+  --section-card-border-color: 0.5em double #000;
+  --section-card-shadow-color: 0 0 30px rgba(0, 0, 0, 0.9);
+
+  --holo-swipe-color: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(0, 0, 0, 0.8) 50%,
+    transparent 70%
+  );
+}
+
+[class^="themed-"],
+[class*=" themed-"] {
+  transition: all 1s ease;
 }
 
 /* default themes */
 .themed-main-text {
   color: var(--main-text-color);
-  transition: color 2s ease;
 }
 
 .themed-text {
   color: var(--text-color);
-  transition: color 2s ease;
 }
 
 .themed-bg {
   background-color: var(--bg-color);
-  transition: background-color 2s ease;
 }
 
 .themed-border {
   border: 2px solid var(--border-color);
-  transition: background-color 2s ease;
-}
-
-/* codeverse canvas theme */
-.themed-codeverse-canvas {
-  transition: all 0.3s ease;
 }
 
 /* navbar logo theme */
 .themed-navbar-logo {
   content: var(--navbar-logo-url);
-  /* display: block; */
+}
+
+/* navbar logo theme */
+.themed-side-bar-logo {
+  content: var(--side-bar-logo-url);
 }
 
 /* nav item active theme */
@@ -110,16 +160,33 @@ nav ul li.active a {
   color: var(--nav-item-text-color) !important;
 }
 
-/* shiny text theme */
-.themed-shine-text {
-  transition: color 2s ease;
-}
-
-/* glass icon themes */
+/* glass icon theme */
 .themed-glass-icon-back {
   background: var(--glass-icon-back-color);
 }
 
 .themed-glass-icon-front {
   background: var(--glass-icon-front-color);
+}
+
+/* profile card theme */
+.themed-profile-card-logo {
+  background: var(--profile-card-logo-bg-color);
+}
+
+.themed-profile-card-bg {
+  background: var(--profile-card-bg-color);
+  backdrop-filter: var(--profile-card-bg-blur);
+}
+
+/* diamond card theme */
+.themed-section-card-shadow {
+  backdrop-filter: var(--section-card-bg-color);
+  border: var(--section-card-border-color);
+  box-shadow: var(--section-card-shadow-color);
+}
+
+.themed-holo-swipe {
+  background: var(--holo-swipe-color);
+  background-size: 200% 100%;
 }

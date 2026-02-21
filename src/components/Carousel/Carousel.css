@@ -9,8 +9,13 @@
 
 .carousel-container {
   position: relative;
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 30px;
+  padding: 2em 0em;
+  backdrop-filter: blur(3px);
   overflow: hidden;
   --outer-r: 24px;
   --p-distance: 12px;

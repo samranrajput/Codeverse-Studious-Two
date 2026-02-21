@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import BackgroundAudio from "../BackgroundAudio/BackgroundAudio";
-import sideBarLogo from "../../assets/images/logo2.png";
-// import logo from "../../assets/images/logo.png";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import "./Navbar.css";
 
@@ -87,7 +85,10 @@ const Navbar: React.FC = () => {
 
       <ul ref={navRef} className={`${menuOpen ? "active" : ""}`}>
         <figure className="sidebar-logo">
-          <img src={sideBarLogo} alt="Codeverse Studious Sidebar Logo" />
+          <img
+            className="themed-side-bar-logo"
+            alt="Codeverse Studious Sidebar Logo"
+          />
         </figure>
 
         {items.map((item) => (

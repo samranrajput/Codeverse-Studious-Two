@@ -49,25 +49,25 @@ const DiamondCard: React.FC<Props> = ({
   return (
     <motion.div
       data-aos={item.aos}
-      className={`${isMobile ? "mobile-item" : "desktop-item"} ${round ? "round" : ""} card-variant-${variant}`}
+      className={`themed-border ${isMobile ? "mobile-item" : "desktop-item"} ${round ? "round" : ""} card-variant-${variant}`}
     >
       {showProjectImage && item.image !== undefined && (
         <figure className="project-image">
           <img src={item.image} alt={item.title} />
         </figure>
       )}
-      <div className="moving-diamond-pattern">
-        {showIcon && item.icon !== undefined && <i>{item.icon}</i>}
+      <div className="moving-diamond-pattern themed-diamond-card">
+        {showIcon && item.icon !== undefined && <i className="themed-main-text">{item.icon}</i>}
         {showCounter && item.counter !== undefined && (
           <div className="counter-container">
-            <CountUp to={item.counter} from={0} className="themed-text" />
-            <span className="plus-sign themed-text">+</span>
+            <CountUp to={item.counter} from={0} className="themed-main-text" />
+            <span className="plus-sign themed-main-text">+</span>
           </div>
         )}
-        <h2 className="title themed-text">{item.title}</h2>
+        <h2 className="title themed-main-text">{item.title}</h2>
 
         {item.description && (
-          <p className="card-description themed-text">{item.description}</p>
+          <p className="card-description themed-main-text">{item.description}</p>
         )}
         {btnGroup && item.webGithubLink !== undefined && (
           <div className="btn-group">
@@ -109,7 +109,7 @@ const DiamondCard: React.FC<Props> = ({
           </div>
         )}
       </div>
-      <div className="holo-swipe"></div>
+      <div className="holo-swipe themed-holo-swipe"></div>
       <div className="g-corner g-tl"></div>
       <div className="g-corner g-br"></div>
     </motion.div>
