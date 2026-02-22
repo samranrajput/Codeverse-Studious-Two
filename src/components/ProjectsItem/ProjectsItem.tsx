@@ -38,55 +38,46 @@ export default function ProjectItem({
     setLiked(!liked);
   };
   return (
-    <div className="project-container">
+    <div
+      data-aos={item.aos}
+      ref={itemRef}
+      className={`themed-section-card ${className} ${
+        isMobile ? "mobile-item" : "desktop-item"
+      } ${round ? "round" : ""}`.trim()}
+      style={style}
+    >
       <figure className="project-image">
         <img src={item.image} alt={item.title} />
       </figure>
-      <div
-        data-aos={item.aos}
-        ref={itemRef}
-        className={`themed-section-card themed-section-card-shadow ${className} ${
-          isMobile ? "mobile-item" : "desktop-item"
-        } ${round ? "round" : ""}`.trim()}
-        style={style}
-      >
+      <div className="overlay themed-overlay">
         <h1 className="themed-main-text">{item.title}</h1>
 
         <p className="themed-main-text">{item.description}</p>
 
         <div className="btn-group">
           <a href={item.webLiveLink} target="_blank" rel="noreferrer">
-            <i>
+            <i className="themed-main-text themed-bg">
               <FaArrowUpRightFromSquare />
             </i>
           </a>
 
-          {/* Instagram Style Like Button */}
-          <button
-            className="like-button"
-            onClick={handleLike}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-            }}
-          >
+          <button onClick={handleLike}>
             <motion.i
               initial={false}
+              className="themed-main-text themed-bg like-button"
               animate={{
                 scale: liked ? [1, 1.5, 1.2, 1] : 1,
-                color: liked ? "#ff3040" : "#ffffff",
+                color: liked ? "#ff3040" : "",
               }}
               transition={{ duration: 0.4, times: [0, 0.2, 0.5, 1] }}
               whileTap={{ scale: 0.8 }}
-              style={{ display: "flex", fontSize: "1.2rem" }}
+              // style={{ fontSize: "3rem" }}
             >
               {liked ? <FaHeart /> : <FaRegHeart />}
             </motion.i>
           </button>
           <a href={item.webGithubLink} target="_blank" rel="noreferrer">
-            <i>
+            <i className="themed-main-text themed-bg">
               <TbBrandGithubFilled />
             </i>
           </a>

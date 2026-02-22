@@ -1,5 +1,6 @@
 import React from "react";
-import headerImage from "../../assets/images/project1.png";
+import project1 from "../../assets/images/project1.png";
+import project2 from "../../assets/images/project2.png";
 import ShinyText from "../ShinyText/ShinyText";
 import Carousel from "../Carousel/Carousel";
 import ProjectsItem from "../ProjectsItem/ProjectsItem";
@@ -9,7 +10,7 @@ const Projects: React.FC = () => {
     {
       id: 1,
       aos: "fade-right",
-      image: headerImage,
+      image: project1,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
@@ -20,7 +21,7 @@ const Projects: React.FC = () => {
     {
       id: 2,
       aos: "fade-down",
-      image: headerImage,
+      image: project2,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
@@ -31,7 +32,7 @@ const Projects: React.FC = () => {
     {
       id: 3,
       aos: "fade-left",
-      image: headerImage,
+      image: project1,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
@@ -42,7 +43,7 @@ const Projects: React.FC = () => {
     {
       id: 4,
       aos: "fade-right",
-      image: headerImage,
+      image: project1,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
@@ -53,7 +54,7 @@ const Projects: React.FC = () => {
     {
       id: 5,
       aos: "fade-up",
-      image: headerImage,
+      image: project1,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",
@@ -64,7 +65,7 @@ const Projects: React.FC = () => {
     {
       id: 6,
       aos: "fade-left",
-      image: headerImage,
+      image: project1,
       title: "Website SEO Optimization",
       description:
         "I design elegant and user-centered web interfaces with a focus on usability, visual appeal, and smooth navigation.",

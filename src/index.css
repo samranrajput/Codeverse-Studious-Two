@@ -16,7 +16,7 @@ html[data-bs-theme="dark"] {
   --main-text-color: #fff;
   --text-color: #a1a1a1;
   --bg-color: #000;
-  --border-color: #292929;
+  --border-color: #fff;
 
   /* codeverse canvas theme */
   --ball-inner-color: #000000;
@@ -56,13 +56,16 @@ html[data-bs-theme="dark"] {
   --section-card-bg-color: blur(5px);
   --section-card-border-color: 0.5em double #fff;
   --section-card-shadow-color: 0 0 30px rgba(255, 255, 255, 0.9);
-  
+
   --holo-swipe-color: linear-gradient(
     115deg,
     transparent 30%,
     rgba(255, 255, 255, 0.8) 50%,
     transparent 70%
   );
+
+  /* overlay theme */
+  --overlay-bg-color: rgba(0, 0, 0, 0.5);
 }
 
 html[data-bs-theme="light"] {
@@ -70,7 +73,7 @@ html[data-bs-theme="light"] {
   --main-text-color: #000;
   --text-color: #666;
   --bg-color: #fff;
-  --border-color: #bdbdbd;
+  --border-color: #000;
 
   /* codeverse canvas theme */
   --ball-inner-color: #7e7e7e;
@@ -117,6 +120,9 @@ html[data-bs-theme="light"] {
     rgba(0, 0, 0, 0.8) 50%,
     transparent 70%
   );
+
+  /* overlay theme */
+  --overlay-bg-color: rgba(255, 255, 255, 0.3);
 }
 
 [class^="themed-"],
@@ -180,7 +186,7 @@ nav ul li.active a {
 }
 
 /* diamond card theme */
-.themed-section-card-shadow {
+.themed-section-card {
   backdrop-filter: var(--section-card-bg-color);
   border: var(--section-card-border-color);
   box-shadow: var(--section-card-shadow-color);
@@ -189,4 +195,9 @@ nav ul li.active a {
 .themed-holo-swipe {
   background: var(--holo-swipe-color);
   background-size: 200% 100%;
+}
+
+/* overlay theme */
+.themed-overlay {
+  background: var(--overlay-bg-color);
 }

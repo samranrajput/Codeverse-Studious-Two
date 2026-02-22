@@ -62,7 +62,7 @@ header .skill-container::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 10px double #a1a1a1;
+  border: 0.8em double #a1a1a1;
   border-radius: 50%;
   mask: conic-gradient(
     transparent 0deg 15deg,
@@ -90,7 +90,7 @@ header .skill-container::before {
 }
 
 html[data-bs-theme="light"] header .skill-container::before {
-  border: 10px double #292929;
+  border: 0.8em double #292929;
 }
 
 @keyframes ring {
@@ -307,7 +307,7 @@ header .container .header-design figure {
   }
 
   header .skill-container::before {
-    border: 5px solid #a1a1a1;
+    border: 0.8em double #a1a1a1;
     mask: conic-gradient(
       transparent 0deg 12deg,
       #a1a1a1 12deg 70deg,

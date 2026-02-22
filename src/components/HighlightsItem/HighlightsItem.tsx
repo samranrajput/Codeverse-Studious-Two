@@ -30,7 +30,7 @@ export default function HighlightsItem({
     <div
       data-aos={item.aos}
       ref={itemRef}
-      className={`themed-section-card themed-section-card-shadow ${className} ${
+      className={`themed-section-card ${className} ${
         isMobile ? "mobile-item" : "desktop-item"
       } ${round ? "round" : ""}`.trim()}
       style={style}

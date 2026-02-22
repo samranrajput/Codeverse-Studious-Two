@@ -86,8 +86,8 @@ html[data-bs-theme="light"] .navbar-btn-group {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 1em;
-  padding: 2em 0em;
+  row-gap: 2em;
+  padding: 1em 0em;
 }
 
 .mobile-item {
@@ -123,12 +123,38 @@ html[data-bs-theme="light"] .navbar-btn-group {
   border-radius: 10px;
 }
 
+.desktop-item p,
+.mobile-item p {
+  font-weight: bold;
+  width: 90%;
+  text-align: center;
+}
+
 .desktop-item h1,
 .mobile-item h1 {
   text-align: center;
   text-transform: uppercase;
   font-style: italic;
   font-weight: bold;
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+  .desktop-item {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 960px) and (orientation: landscape) {
+  .desktop-item {
+    width: 27vw;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .mobile-item {
+    padding: 4em 0em;
+    height: 100%;
+  }
 }
 
 @media (max-width: 960px) and (orientation: landscape) {
