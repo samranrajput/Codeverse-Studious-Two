@@ -81,7 +81,6 @@ html[data-bs-theme="light"] .navbar-btn-group {
 .mobile-item {
   width: 28vw;
   overflow: hidden;
-  border-radius: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
