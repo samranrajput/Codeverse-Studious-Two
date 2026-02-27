@@ -35,6 +35,7 @@ a {
 }
 
 .btn {
+  background: transparent;
   font-weight: bold;
   cursor: pointer;
   padding: 1em 1.5em;
@@ -79,7 +80,7 @@ html[data-bs-theme="light"] .navbar-btn-group {
 /* Section cards */
 .desktop-item,
 .mobile-item {
-  width: 28vw;
+  width: 27vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;

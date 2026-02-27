@@ -234,12 +234,12 @@ const ClientReviews: React.FC = () => {
           >
             {submitMessage.type === "success" ? (
               <>
-                <FaCheckCircle style={{ color: "green" }} />
+                <FaCheckCircle style={{ color: "green", fontSize: "1.5rem" }} />
                 <p style={{ color: "green" }}>{submitMessage.text}</p>
               </>
             ) : (
               <>
-                <RxCrossCircled style={{ color: "red" }} />
+                <RxCrossCircled style={{ color: "red", fontSize: "1.5rem" }} />
                 <p style={{ color: "red" }}>{submitMessage.text}</p>
               </>
             )}
@@ -250,6 +250,8 @@ const ClientReviews: React.FC = () => {
           onSubmit={handleSubmit}
           className="submit-review-form themed-section-card"
         >
+          <div className="holo-swipe themed-holo-swipe"></div>
+
           <div className="profile-wrapper">
             <div className="avatar-container themed-border themed-main-bg themed-text">
               {croppedImage ? (
@@ -270,12 +272,13 @@ const ClientReviews: React.FC = () => {
                 accept="image/*"
                 onChange={handleImageChange}
                 hidden
+                className="themed-bg themed-text"
               />
             </div>
           </div>
 
           {imageSrc && (
-            <div className="editor-modal">
+            <div className="editor-modal themed-bg themed-border">
               <div style={getCropperContainerStyle()}>
                 <Cropper
                   image={imageSrc}
@@ -288,18 +291,30 @@ const ClientReviews: React.FC = () => {
                   onCropComplete={onCropComplete}
                 />
               </div>
-              <input
-                type="range"
-                min={1}
-                max={3}
-                step={0.1}
-                value={zoom}
-                onChange={(e) => setZoom(Number(e.target.value))}
-              />
-              <button type="button" onClick={getCroppedImg}>
+              <div className="range-group">
+                <p className="themed-text">Zoom</p>
+                <input
+                  type="range"
+                  min={1}
+                  max={3}
+                  step={0.1}
+                  value={zoom}
+                  onChange={(e) => setZoom(Number(e.target.value))}
+                  className="crop-slider"
+                />
+              </div>
+              <button
+                type="button"
+                className="btn-apply"
+                onClick={getCroppedImg}
+              >
                 Apply
               </button>
-              <button type="button" onClick={handleCancel}>
+              <button
+                type="button"
+                className="btn-cancel"
+                onClick={handleCancel}
+              >
                 Cancel
               </button>
             </div>
@@ -307,44 +322,73 @@ const ClientReviews: React.FC = () => {
 
           <div className="form-group">
             <input
+              className="themed-main-text themed-border"
+              id="fullName"
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              placeholder="Full Name"
-              required
+              placeholder=" "
             />
+            <label className="themed-main-text" htmlFor="fullName">
+              Full Name
+            </label>
           </div>
           <div className="form-group">
             <input
+              className="themed-main-text themed-border"
+              id="fullName"
               type="text"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              placeholder="Country"
-              required
+              placeholder=" "
+            />
+            <label className="themed-main-text" htmlFor="country">
+              Country
+            </label>
+          </div>
+
+          <div className="star-reviews-container">
+            <div className="stars-container">{renderStars()}</div>
+            <input
+              type="range"
+              min="0"
+              max="5"
+              step="0.5"
+              value={rating}
+              onChange={(e) => setRating(Number(e.target.value))}
             />
           </div>
 
-          <div className="stars-container">{renderStars()}</div>
-          <input
-            type="range"
-            min="0"
-            max="5"
-            step="0.5"
-            value={rating}
-            onChange={(e) => setRating(Number(e.target.value))}
-          />
+          <div className="form-group">
+            <textarea
+              className="themed-main-text themed-border"
+              id="meassage"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder=" "
+            ></textarea>
+            <label
+              className="themed-main-text meassage-label"
+              htmlFor="meassage"
+            >
+              Message
+            </label>
+          </div>
 
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message"
-            required
-          />
-
-          <button type="submit" disabled={isSubmitting}>
+          <button
+            type="submit"
+            className="submit-btn themed-border"
+            disabled={isSubmitting}
+          >
             <ShinyText
               text={isSubmitting ? "Sending..." : "Submit Review"}
-              speed={2.5}
+              speed={2}
+              spread={135}
+              direction="left"
+              yoyo
+              pauseOnHover
+              disabled={false}
+              className="btn"
             />
           </button>
         </form>
