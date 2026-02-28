@@ -9,6 +9,8 @@ import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { IoMdPhotos } from "react-icons/io";
 import { RxCrossCircled } from "react-icons/rx";
 import { FaCheckCircle } from "react-icons/fa";
+// Confetti import add kiya
+import { type ConfettiRef } from "../ConfettiCanvas/ConfettiCanvas";
 
 // Cloudinary Constants
 const CLOUDINARY_CLOUD_NAME = "dgztym2e5";
@@ -24,7 +26,13 @@ interface ImageDimensions {
   height: number;
 }
 
-const ClientReviews: React.FC = () => {
+// 1. Props interface add ki
+interface ClientReviewsProps {
+  confettiRef: React.RefObject<ConfettiRef | null>;
+}
+
+// 2. Props ko yahan receive kiya
+const ClientReviews: React.FC<ClientReviewsProps> = ({ confettiRef }) => {
   const [fullName, setFullName] = useState<string>("");
   const [country, setCountry] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -199,6 +207,9 @@ const ClientReviews: React.FC = () => {
       });
 
       if (response.ok) {
+        // 3. Confetti fire logic yahan add ki
+        confettiRef.current?.fire();
+
         setSubmitMessage({ type: "success", text: "Submitted successfully!" });
         setFullName("");
         setCountry("");
@@ -336,7 +347,7 @@ const ClientReviews: React.FC = () => {
           <div className="form-group">
             <input
               className="themed-main-text themed-border"
-              id="fullName"
+              id="country" // Fixed duplicate ID from fullName to country
               type="text"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
