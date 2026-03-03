@@ -7,13 +7,9 @@ import React, {
 } from "react";
 import "./LogoLoop.css";
 
-export type LogoItem =
-  | {
-      node: React.ReactNode;
-      href?: string;
-      title?: string;
-      ariaLabel?: string;
-    }
+// Type ko update kiya taake error na aaye
+export type LogoItem = (
+  | { node: React.ReactNode; href?: string; title?: string; ariaLabel?: string }
   | {
       src: string;
       alt?: string;
@@ -23,14 +19,17 @@ export type LogoItem =
       sizes?: string;
       width?: number;
       height?: number;
-    };
+    }
+) & {
+  skillName?: string; // New
+  experiencePercent?: number; // New
+};
 
 export interface LogoLoopProps {
   logos: LogoItem[];
   speed?: number;
   direction?: "left" | "right" | "up" | "down";
   width?: number | string;
-  logoHeight?: number;
   gap?: number;
   pauseOnHover?: boolean;
   hoverSpeed?: number;
@@ -65,16 +64,13 @@ const useResizeObserver = (
       callback();
       return () => window.removeEventListener("resize", handleResize);
     }
-
     const observers = elements.map((ref) => {
       if (!ref.current) return null;
       const observer = new ResizeObserver(callback);
       observer.observe(ref.current);
       return observer;
     });
-
     callback();
-
     return () => {
       observers.forEach((observer) => observer?.disconnect());
     };
@@ -88,12 +84,10 @@ const useImageLoader = (
 ) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll("img") ?? [];
-
     if (images.length === 0) {
       onLoad();
       return;
     }
-
     let remainingImages = images.length;
     const handleImageLoad = () => {
       remainingImages -= 1;
@@ -101,7 +95,6 @@ const useImageLoader = (
         onLoad();
       }
     };
-
     images.forEach((img) => {
       const htmlImg = img as HTMLImageElement;
       if (htmlImg.complete) {
@@ -111,7 +104,6 @@ const useImageLoader = (
         htmlImg.addEventListener("error", handleImageLoad, { once: true });
       }
     });
-
     return () => {
       images.forEach((img) => {
         img.removeEventListener("load", handleImageLoad);
@@ -134,13 +126,10 @@ const useAnimationLoop = (
   const lastTimestampRef = useRef<number | null>(null);
   const offsetRef = useRef(0);
   const velocityRef = useRef(0);
-
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-
     const seqSize = isVertical ? seqHeight : seqWidth;
-
     if (seqSize > 0) {
       offsetRef.current = ((offsetRef.current % seqSize) + seqSize) % seqSize;
       const transformValue = isVertical
@@ -148,39 +137,30 @@ const useAnimationLoop = (
         : `translate3d(${-offsetRef.current}px, 0, 0)`;
       track.style.transform = transformValue;
     }
-
     const animate = (timestamp: number) => {
       if (lastTimestampRef.current === null) {
         lastTimestampRef.current = timestamp;
       }
-
       const deltaTime =
         Math.max(0, timestamp - lastTimestampRef.current) / 1000;
       lastTimestampRef.current = timestamp;
-
       const target =
         isHovered && hoverSpeed !== undefined ? hoverSpeed : targetVelocity;
-
       const easingFactor =
         1 - Math.exp(-deltaTime / ANIMATION_CONFIG.SMOOTH_TAU);
       velocityRef.current += (target - velocityRef.current) * easingFactor;
-
       if (seqSize > 0) {
         let nextOffset = offsetRef.current + velocityRef.current * deltaTime;
         nextOffset = ((nextOffset % seqSize) + seqSize) % seqSize;
         offsetRef.current = nextOffset;
-
         const transformValue = isVertical
           ? `translate3d(0, ${-offsetRef.current}px, 0)`
           : `translate3d(${-offsetRef.current}px, 0, 0)`;
         track.style.transform = transformValue;
       }
-
       rafRef.current = requestAnimationFrame(animate);
     };
-
     rafRef.current = requestAnimationFrame(animate);
-
     return () => {
       if (rafRef.current !== null) {
         cancelAnimationFrame(rafRef.current);
@@ -198,7 +178,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     useCustomRender,
     direction = "left",
     width = "100%",
-    logoHeight = 28,
     gap = 32,
     pauseOnHover,
     hoverSpeed,
@@ -213,7 +192,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     const containerRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const seqRef = useRef<HTMLUListElement>(null);
-
     const [seqWidth, setSeqWidth] = useState<number>(0);
     const [seqHeight, setSeqHeight] = useState<number>(0);
     const [copyCount, setCopyCount] = useState<number>(
@@ -278,16 +256,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     useResizeObserver(
       updateDimensions,
       [containerRef, seqRef],
-      [logos, gap, logoHeight, isVertical],
+      [logos, gap, isVertical],
     );
-
-    useImageLoader(seqRef, updateDimensions, [
-      logos,
-      gap,
-      logoHeight,
-      isVertical,
-    ]);
-
+    useImageLoader(seqRef, updateDimensions, [logos, gap, isVertical]);
     useAnimationLoop(
       trackRef,
       targetVelocity,
@@ -302,10 +273,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
       () =>
         ({
           "--logoloop-gap": `${gap}px`,
-          "--logoloop-logoHeight": `${logoHeight}px`,
           ...(fadeOutColor && { "--logoloop-fadeColor": fadeOutColor }),
         }) as React.CSSProperties,
-      [gap, logoHeight, fadeOutColor],
+      [gap, fadeOutColor],
     );
 
     const rootClassName = useMemo(
@@ -349,25 +319,19 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         ) : (
           <img
             src={(item as any).src}
-            srcSet={(item as any).srcSet}
-            sizes={(item as any).sizes}
+            alt={(item as any).alt ?? ""}
             width={(item as any).width}
             height={(item as any).height}
-            alt={(item as any).alt ?? ""}
-            title={(item as any).title}
             loading="lazy"
             decoding="async"
             draggable={false}
           />
         );
-        const itemAriaLabel = isNodeItem
-          ? ((item as any).ariaLabel ?? (item as any).title)
-          : ((item as any).alt ?? (item as any).title);
+
         const itemContent = (item as any).href ? (
           <a
             className="logoloop__link"
             href={(item as any).href}
-            aria-label={itemAriaLabel || "logo link"}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -376,13 +340,40 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         ) : (
           content
         );
+
         return (
-          <li className="logoloop__item themed-text" key={key} role="listitem">
+          <li
+            className="logoloop__item themed-section-card"
+            key={key}
+            role="listitem"
+          >
+            {/* Skill Name added here */}
+            {item.skillName && (
+              <p className="themed-text skill-name">{item.skillName}</p>
+            )}
+
             {itemContent}
+
+            {/* Range/Experience Bar Logic */}
+            {item.experiencePercent !== undefined && (
+              <div className="skill-experience-wrapper">
+                <div className="range-background">
+                  <span
+                    className="range-fill"
+                    style={
+                      {
+                        "--target-percent": `${item.experiencePercent}%`,
+                      } as React.CSSProperties
+                    }
+                  ></span>
+                </div>
+                <p className="experience-number">{item.experiencePercent}%</p>
+              </div>
+            )}
           </li>
         );
       },
-      [renderItem],
+      [renderItem, useCustomRender],
     );
 
     const logoLists = useMemo(
@@ -437,7 +428,5 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     );
   },
 );
-
-LogoLoop.displayName = "LogoLoop";
 
 export default LogoLoop;

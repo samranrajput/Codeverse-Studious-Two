@@ -27,36 +27,50 @@ const Skills: React.FC = () => {
       node: <FaHtml5 style={{ color: "#E34F26" }} />,
       title: "HTML",
       href: "https://www.w3schools.com/html/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaCss3Alt style={{ color: "#1572B6" }} />,
       title: "CSS",
       href: "https://www.w3schools.com/css/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaBootstrap style={{ color: "#7952B3" }} />,
       title: "Bootstrap",
       href: "https://www.w3schools.com/bootstrap/bootstrap_ver.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <RiTailwindCssFill style={{ color: "#06B6D4" }} />,
       title: "Tailwind",
       href: "https://v2.tailwindcss.com/docs",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <RiJavascriptFill style={{ color: "#F7DF1E" }} />,
       title: "Javascript",
       href: "https://www.w3schools.com/js/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <SiTypescript style={{ color: "#007ACC" }} />,
       title: "Nodejs",
       href: "https://www.w3schools.com/typescript/index.php",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <SiReact style={{ color: "#61DAFB" }} />,
       title: "React",
       href: "https://www.w3schools.com/react/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: (
@@ -70,11 +84,15 @@ const Skills: React.FC = () => {
       ),
       title: "React",
       href: "https://nextjs.org/docs",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <img src={PythonIcon} alt="" style={{ transform: "scale(1.2)" }} />,
       title: "Python",
       href: "https://www.w3schools.com/python/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: (
@@ -84,46 +102,64 @@ const Skills: React.FC = () => {
       ),
       title: "Django",
       href: "https://docs.djangoproject.com/en/6.0/",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaDatabase style={{ color: "#00618A" }} />,
       title: "Database",
       href: "https://www.w3schools.com/sql/",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <SiPhp style={{ color: "#777BB4" }} />,
       title: "PHP",
       href: "https://www.w3schools.com/php/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaWordpress style={{ color: "#21759B" }} />,
       title: "Wordpress",
       href: "https://wordpress.org/documentation/",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaLaravel style={{ color: "#FF2D20" }} />,
       title: "Laravel",
       href: "https://laravel.com/docs/",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <img src={JavaIcon} alt="" style={{ transform: "scale(1.2)" }} />,
       title: "Java",
       href: "https://www.w3schools.com/java/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
       node: <FaGitAlt style={{ color: "#F05032" }} />,
       title: "Git",
       href: "https://www.w3schools.com/git/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
-      node: <FaGithub className="themed-text" />,
+      node: <FaGithub className="themed-main-text" />,
       title: "Github",
       href: "https://www.w3schools.com/git/default.asp",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
     {
-      node: <p className="themed-text">AI</p>,
+      node: <p className="themed-main-text">AI</p>,
       title: "AI",
       href: "https://chatgpt.com/",
+      skillName: "HTML5", // Add this
+      experiencePercent: 90,
     },
   ];
 
@@ -145,7 +181,6 @@ const Skills: React.FC = () => {
         logos={techLogos}
         speed={120}
         direction="right"
-        logoHeight={100}
         gap={40}
         hoverSpeed={0}
         scaleOnHover
