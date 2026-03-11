@@ -1,0 +1,102 @@
+.skills-network-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #080808;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.network-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.base-line {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-width: 2;
+}
+.pulse-line {
+  fill: none;
+  stroke: #df20ff;
+  stroke-width: 3;
+}
+
+.center-node {
+  position: absolute;
+  z-index: 10;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #df20ff;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 30px rgba(223, 32, 255, 0.2);
+}
+
+.skill-node-wrapper {
+  position: absolute;
+  z-index: 20;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%); /* Alignment ka asli fix */
+}
+
+.progress-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  stroke: #222;
+  fill: #121212;
+  stroke-width: 4;
+}
+.progress-bar {
+  stroke: #df20ff;
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.node-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none;
+}
+
+.icon-wrapper {
+  color: #df20ff;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.node-text span {
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.node-text .percent {
+  font-size: 8px;
+  opacity: 0.7;
+}
